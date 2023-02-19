@@ -1,3 +1,9 @@
+import "./styles/main-content.css";
+import creed from "./images/creed.jfif";
+import fastX from "./images/fast-x.jpg";
+import meg from "./images/meg.jpg";
+import main from "./images/main.png";
+
 const Home = () => {
     return (
         <main>
@@ -27,11 +33,11 @@ const Home = () => {
                 </ul>
             </aside>
             <section className="content">
-                <img className="main-photo" src="./images/main.svg" alt="main" />
+                <img className="main-photo" src={main} alt="main" />
                 <h3 className="latest">Latest Films...</h3>
                 <div className="films">
                     <article className="film">
-                        <img className="film-img" src="./images/fast-x.jpg" alt="fast-x" />
+                        <img className="film-img" src={fastX} alt="fast-x" />
                         <a
                             className="link"
                             href="https://www.youtube.com/watch?v=32RAq6JzY-w"
@@ -47,7 +53,7 @@ const Home = () => {
                         </p>
                     </article>
                     <article className="film">
-                        <img className="film-img" src="./images/creed.jfif" alt="creed" />
+                        <img className="film-img" src={creed} alt="creed" />
                         <a
                             className="link"
                             href="https://www.youtube.com/watch?v=AHmCH7iB_IM"
@@ -62,7 +68,7 @@ const Home = () => {
                         </p>
                     </article>
                     <article className="film">
-                        <img className="film-img" src="./images/meg.jpg" alt="meg" />
+                        <img className="film-img" src={meg} alt="meg" />
                         <a
                             className="link"
                             href="https://www.youtube.com/watch?v=Bpz8apWAhyw"

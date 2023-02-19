@@ -4,8 +4,6 @@
     gap: 40px;
     border-bottom: 3px solid black;
     background-color: rgb(181, 179, 179);
-    position: sticky;
-    top: 0%;
 }
 
 .nav-item-logo {
