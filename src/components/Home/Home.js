@@ -42,6 +42,7 @@ const Home = () => {
                             className="link"
                             href="https://www.youtube.com/watch?v=32RAq6JzY-w"
                             target="_blank"
+                            rel="noreferrer"
                         >
                             Watch Trailer
                         </a>
@@ -58,6 +59,7 @@ const Home = () => {
                             className="link"
                             href="https://www.youtube.com/watch?v=AHmCH7iB_IM"
                             target="_blank"
+                            rel="noreferrer"
                         >
                             Watch Trailer
                         </a>
@@ -73,6 +75,7 @@ const Home = () => {
                             className="link"
                             href="https://www.youtube.com/watch?v=Bpz8apWAhyw"
                             target="_blank"
+                            rel="noreferrer"
                         >
                             Watch Trailer
                         </a>
