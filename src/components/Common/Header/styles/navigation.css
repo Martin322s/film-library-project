@@ -46,6 +46,11 @@ i.search {
     cursor: pointer;
 }
 
+.btn-search:hover {
+    background-color: black;
+    color: gold;
+}
+
 .header_heading {
     text-align: center;
     font-size: 50px;
