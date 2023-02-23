@@ -11,3 +11,11 @@ footer {
     display: inline-block;
     margin-right: 10px;
 }
+
+.footer-link {
+    color: white;
+}
+
+.footer-link:hover {
+    color: gold;
+}

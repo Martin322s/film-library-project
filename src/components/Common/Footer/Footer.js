@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./styles/footer.css";
 
 const Footer = () => {
@@ -15,13 +16,31 @@ const Footer = () => {
             <ul role={"list"}>
                 <li>Follow us on</li>
                 <li className="footer-item">
-                    <i className="fab fa-github-square" />
+                    <Link
+                        className="footer-link" 
+                        to="https://github.com/MaRtin322s"
+                        target={"_blank"}
+                    >
+                        <i className="fab fa-github-square" />
+                    </Link>
                 </li>
                 <li className="footer-item">
-                    <i className="fab fa-facebook-square" />
+                    <Link
+                        className="footer-link" 
+                        to="https://www.facebook.com/profile.php?id=100009733451214"
+                        target={"_blank"}
+                    >
+                        <i className="fab fa-facebook-square" />
+                    </Link>
                 </li>
                 <li className="footer-item">
-                    <i className="fab fa-instagram" />
+                    <Link
+                        className="footer-link" 
+                        to="https://www.instagram.com/martin13s18/"
+                        target={"_blank"}
+                    >
+                        <i className="fab fa-instagram" />
+                    </Link>
                 </li>
             </ul>
         </footer>
