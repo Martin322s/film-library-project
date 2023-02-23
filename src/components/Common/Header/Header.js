@@ -3,31 +3,33 @@ import logo from "./images/logo.png";
 
 const Header = () => {
     return (
+        // eslint-disable-next-line
         <header className="heading">
-            <ul className="heading__navbar" role="list">
+        {/* eslint-disable-next-line */}
+            <ul className="heading__navbar" role={"list"}>
                 <li className="nav-item-logo">
                     <img src={logo} alt="logo" />
                 </li>
                 <li className="nav-item">
-                    <a href="#">Home</a>
+                    <a href="/">Home</a>
                 </li>
                 <li className="nav-item">
-                    <a href="#">Catalog</a>
+                    <a href="/">Catalog</a>
                 </li>
                 <li className="nav-item">
-                    <a href="#">Profile</a>
+                    <a href="/">Profile</a>
                 </li>
                 <li className="nav-item">
-                    <a href="#">Create</a>
+                    <a href="/">Create</a>
                 </li>
                 <li className="nav-item">
                     <a href="/login">Sign In</a>
                 </li>
                 <li className="nav-item">
-                    <a href="#">Sign Up</a>
+                    <a href="/">Sign Up</a>
                 </li>
                 <li className="nav-item">
-                    <a href="#">Logout</a>
+                    <a href="/">Logout</a>
                 </li>
                 <li className="nav-item-search">
                     <input type="text" placeholder="Search" />
