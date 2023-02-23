@@ -20,7 +20,7 @@ const Login = () => {
                     <label htmlFor="password">Password:</label>
                     <input type="password" name="password" id="password" />
                     <p>
-                        You don't have an account? <a href="#">Sign Up</a>
+                        You don't have an account? <a href="/">Sign Up</a>
                     </p>
                     <button className="btn">Sign In</button>
                 </form>
