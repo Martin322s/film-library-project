@@ -1,4 +1,5 @@
 import "./styles/navigation.css";
+import { Link } from "react-router-dom";
 import logo from "./images/logo.png";
 
 const Header = () => {
@@ -11,7 +12,7 @@ const Header = () => {
                     <img src={logo} alt="logo" />
                 </li>
                 <li className="nav-item">
-                    <a href="/">Home</a>
+                    <Link to="/">Home</Link>
                 </li>
                 <li className="nav-item">
                     <a href="/">Catalog</a>
@@ -23,7 +24,7 @@ const Header = () => {
                     <a href="/">Create</a>
                 </li>
                 <li className="nav-item">
-                    <a href="/login">Sign In</a>
+                    <Link to="/login">Sign In</Link>
                 </li>
                 <li className="nav-item">
                     <a href="/">Sign Up</a>
