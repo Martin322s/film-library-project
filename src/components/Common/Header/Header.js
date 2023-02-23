@@ -27,7 +27,7 @@ const Header = () => {
                     <Link to="/login">Sign In</Link>
                 </li>
                 <li className="nav-item">
-                    <a href="/">Sign Up</a>
+                    <Link to="/register">Sign Up</Link>
                 </li>
                 <li className="nav-item">
                     <a href="/">Logout</a>

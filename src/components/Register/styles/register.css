@@ -2,35 +2,35 @@ main {
     display: flex;
 }
 
-.login {
+.register {
     border: 1px solid black;
     position: relative;
     top: 10%;
-    left: 60%;
+    left: 40%;
     padding: 30px;
-    margin-bottom: 75px;
+    margin-bottom: 120px;
 }
 
-.login h1 {
+.register h1 {
     text-align: center;
     padding-bottom: 5px;
     border-bottom: 4px solid black;
 }
 
-.login label {
+.register label {
     display: block;
     margin-top: 10px;
 }
 
-.login input {
+.register input {
     display: block;
     margin-bottom: 15px;
-    width: 300px;
+    width: 350px;
     border: none;
     border-bottom: 3px solid black;
 }
 
-.login input:focus {
+.register input:focus {
     outline: none;
     border-bottom: 3px solid black;
     vertical-align: middle;
@@ -45,7 +45,7 @@ a:hover {
     color: red;
 }
 
-.login .btn {
+.register .btn {
     border-radius: 25px;
     padding: 8px 15px;
     vertical-align: middle;

@@ -4,13 +4,15 @@ const Footer = () => {
     return (
         <footer>
             <h1 className="footer_heading">Cinema City</h1>
-            <ul role="list">
+            {/* eslint-disable-next-line */}
+            <ul role={"list"}>
                 <li>About us</li>
                 <li>FAQ</li>
                 <li>Terms and Conditions</li>
                 <li>Contacts</li>
             </ul>
-            <ul role="list">
+            {/* eslint-disable-next-line */}
+            <ul role={"list"}>
                 <li>Follow us on</li>
                 <li className="footer-item">
                     <i className="fab fa-github-square" />

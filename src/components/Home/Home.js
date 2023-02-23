@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./styles/main-content.css";
 import creed from "./images/creed.jfif";
 import fastX from "./images/fast-x.jpg";
@@ -38,14 +39,15 @@ const Home = () => {
                 <div className="films">
                     <article className="film">
                         <img className="film-img" src={fastX} alt="fast-x" />
-                        <a
+                        <Link
                             className="link"
-                            href="https://www.youtube.com/watch?v=32RAq6JzY-w"
+                            to="https://www.youtube.com/watch?v=32RAq6JzY-w"
                             target="_blank"
                             rel="noreferrer"
+                            replace
                         >
                             Watch Trailer
-                        </a>
+                        </Link>
                         <h2>Fast and Furious 10</h2>
                         <p>
                             Fast X (also known as Fast &amp; Furious 10) is an upcoming American
@@ -55,14 +57,15 @@ const Home = () => {
                     </article>
                     <article className="film">
                         <img className="film-img" src={creed} alt="creed" />
-                        <a
+                        <Link
                             className="link"
-                            href="https://www.youtube.com/watch?v=AHmCH7iB_IM"
+                            to="https://www.youtube.com/watch?v=AHmCH7iB_IM"
                             target="_blank"
                             rel="noreferrer"
+                            replace
                         >
                             Watch Trailer
-                        </a>
+                        </Link>
                         <h2>Creed III</h2>
                         <p>
                             Creed III is a 2022 American sports drama film directed by Michael
@@ -71,14 +74,15 @@ const Home = () => {
                     </article>
                     <article className="film">
                         <img className="film-img" src={meg} alt="meg" />
-                        <a
+                        <Link
                             className="link"
-                            href="https://www.youtube.com/watch?v=Bpz8apWAhyw"
+                            to="https://www.youtube.com/watch?v=Bpz8apWAhyw"
                             target="_blank"
                             rel="noreferrer"
+                            replace
                         >
                             Watch Trailer
-                        </a>
+                        </Link>
                         <h2>The Meg II</h2>
                         <p>
                             Mega Beast 2 is an upcoming 2023 American science fiction action
