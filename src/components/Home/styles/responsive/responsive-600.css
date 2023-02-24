@@ -3,6 +3,18 @@
         background-color: rgb(245, 229, 209);
     }
 
+    .categories {
+        display: none;
+    }
+
+    .header_heading {
+        font-size: 25px;
+    }
+
+    i.fa-film {
+        font-size: 30px;
+    }
+
     .heading__navbar {
         flex-direction: column;
         align-items: center;
