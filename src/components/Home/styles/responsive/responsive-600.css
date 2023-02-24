@@ -1,4 +1,8 @@
 @media screen and (max-width: 600px) {
+    body {
+        background-color: rgb(245, 229, 208);
+    }
+
     .heading__navbar {
         flex-direction: column;
         align-items: center;
