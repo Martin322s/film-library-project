@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./styles/main-content.css";
+import "./styles/responsive/responsive-600.css";
 import creed from "./images/creed.jfif";
 import fastX from "./images/fast-x.jpg";
 import meg from "./images/meg.jpg";

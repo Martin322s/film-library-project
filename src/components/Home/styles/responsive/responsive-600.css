@@ -1,0 +1,54 @@
+@media screen and (max-width: 600px) {
+    .heading__navbar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-item-search:not(i.search) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-item-search .search {
+        position: relative;
+        left: 130px;
+        top: -27px;
+    }
+
+    .nav-item-search button {
+        margin-bottom: 20px;
+    }
+
+    .aside-heading {
+        text-align: center;
+    }
+
+    .main-photo {
+        width: 400px;
+        height: 200px;
+        margin: 50px 5px;
+    }
+
+    aside ul.categories {
+        margin: auto;
+    }
+
+    .nav-item-logo {
+        margin-left: 50px;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .films {
+        flex-direction: column;
+    }
+
+    footer {
+        gap: 50px;
+    }
+}
