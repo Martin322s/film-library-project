@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./styles/login.css";
+import "./styles/responsive/responsive.css";
 
 const Login = () => {
     return (
