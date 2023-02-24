@@ -4,7 +4,7 @@ import "./styles/responsive/responsive-600.css";
 import creed from "./images/creed.jfif";
 import fastX from "./images/fast-x.jpg";
 import meg from "./images/meg.jpg";
-import main from "./images/main.png";
+import main from "./images/main-two.jpeg";
 
 const Home = () => {
     return (
