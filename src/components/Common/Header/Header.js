@@ -15,10 +15,10 @@ const Header = () => {
                     <Link to="/">Home</Link>
                 </li>
                 <li className="nav-item">
-                    <a href="/">Catalog</a>
+                    <Link to="/catalog">Catalog</Link>
                 </li>
                 <li className="nav-item">
-                    <a href="/">Profile</a>
+                    <Link to="/profile">Profile</Link>
                 </li>
                 <li className="nav-item">
                     <Link to="/create">Create</Link>
@@ -30,7 +30,7 @@ const Header = () => {
                     <Link to="/register">Sign Up</Link>
                 </li>
                 <li className="nav-item">
-                    <a href="/">Logout</a>
+                    <Link to="/">Logout</Link>
                 </li>
                 <li className="nav-item-search">
                     <input type="text" placeholder="Search" />

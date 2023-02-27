@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import Catalog from "./components/Catalog/Catalog";
 import Footer from "./components/Common/Footer/Footer";
 import Header from "./components/Common/Header/Header";
 import Create from "./components/Create/Create";
@@ -15,6 +16,7 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/create" element={<Create />} />
+                    <Route path="/catalog" element={<Catalog />} />
                 </Routes>    
             <Footer />
         </>
