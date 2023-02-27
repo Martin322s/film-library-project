@@ -2,36 +2,41 @@ main {
     display: flex;
 }
 
-.login {
+.create {
     border: 1px solid black;
     position: relative;
     top: 10%;
-    left: 60%;
+    left: 40%;
     padding: 30px;
-    margin-bottom: 75px;
+    margin-bottom: 120px;
+    margin-left: -90px;
     background-color: rgb(240, 203, 156);
 }
 
-.login h1 {
+.create textarea {
+    width: 350px;
+}
+
+.create h1 {
     text-align: center;
     padding-bottom: 5px;
     border-bottom: 4px solid black;
 }
 
-.login label {
+.create label {
     display: block;
     margin-top: 10px;
 }
 
-.login input {
+.create input {
     display: block;
     margin-bottom: 15px;
-    width: 300px;
+    width: 350px;
     border: none;
     border-bottom: 3px solid black;
 }
 
-.login input:focus {
+.create input:focus {
     outline: none;
     border-bottom: 3px solid black;
     vertical-align: middle;
@@ -46,7 +51,7 @@ a:hover {
     color: red;
 }
 
-.login .btn {
+.create .btn {
     border-radius: 25px;
     padding: 8px 15px;
     vertical-align: middle;
