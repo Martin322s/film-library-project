@@ -9,7 +9,7 @@ const Catalog = () => {
             <aside>
                 <h2 className="aside-heading">Categories</h2>
                 {/* eslint-disable-next-line */}
-                <ul className="categories" role={"list"}>
+                <ul className="catalog-categories" role={"list"}>
                     <li>Action</li>
                     <li>Comedy</li>
                     <li>Criminal</li>
