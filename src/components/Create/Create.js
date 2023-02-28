@@ -1,11 +1,11 @@
-import "./styles/create.css";
+import "./styles/create.module.css";
 
 const Create = () => {
     return (
         <main>
             <aside>
-                <h2 className="aside-heading">Create publication for your favourite films</h2>
-                <ul className="categories">
+                <h2 className={styles["aside-heading"]}>Create publication for your favourite films</h2>
+                <ul className={styles["categories"]}>
                     <li>You can:</li>
                     <li>- Share you favourite films</li>
                     <li>- Save the best films to your watchlist</li>
@@ -13,7 +13,7 @@ const Create = () => {
                     <li>and much more...</li>
                 </ul>
             </aside>
-            <section className="content">
+            <section className={styles["content"]}>
                 <form className="create">
                     <h1>Create publication</h1>
                     <label htmlFor="title">Title:</label>
