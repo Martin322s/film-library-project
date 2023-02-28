@@ -1,20 +1,20 @@
 import { Link } from "react-router-dom";
-import "./styles/register.css";
+import styles from "./styles/register.module.css";
 
 const Register = () => {
     return (
         <main>
             <aside>
-                <h2 className="aside-heading">If you create an account, you can:</h2>
-                <ul className="categories">
+                <h2 className={styles["aside-heading"]}>If you create an account, you can:</h2>
+                <ul className={styles["categories"]}>
                     <li>- Watch trailers for free</li>
                     <li>- Share you favourite films</li>
                     <li>- Save the best films to your watchlist</li>
                     <li>and much more...</li>
                 </ul>
             </aside>
-            <section className="content">
-                <form className="register">
+            <section className={styles["content"]}>
+                <form className={styles["register"]}>
                     <h1>Register</h1>
                     <label htmlFor="firstName">First Name:</label>
                     <input type="text" name="firstName" id="firstName" />
@@ -29,7 +29,7 @@ const Register = () => {
                     <p>
                         Aleready registered? <Link to="/login" replace>Sign In</Link>
                     </p>
-                    <button className="btn">Sign Up</button>
+                    <button className={styles["btn"]}>Sign Up</button>
                 </form>
             </section>
         </main>
