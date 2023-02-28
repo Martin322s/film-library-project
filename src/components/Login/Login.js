@@ -3,11 +3,13 @@ import styles from "./styles/login.module.css";
 import "./styles/responsive/responsive.css";
 
 const Login = () => {
+    // eslint-disable-next-line
     return (
         <main>
             <aside>
                 <h2 className={styles["aside-heading"]}>If you have an account, you can:</h2>
-                <ul className={styles["categories"]}>
+                {/* eslint-disable-next-line */}
+                <ul className={styles["categories"]} role={"list"}>
                     <li>- Watch trailers for free</li>
                     <li>- Share you favourite films</li>
                     <li>- Save the best films to your watchlist</li>

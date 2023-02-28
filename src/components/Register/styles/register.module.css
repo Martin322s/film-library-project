@@ -62,8 +62,8 @@ a:hover {
     color: gold;
 }
 
-.categories {
-    margin-left: 20px;
+ul.categories {
+    margin-left: 25px;
     font-size: 20px;
 }
 

@@ -67,11 +67,19 @@ a:hover {
     color: gold;
 }
 
-.categories {
-    margin-left: 20px;
+ul.categories {
+    margin-left: 25px;
     font-size: 20px;
 }
 
 .categories li:nth-of-type(4) {
     list-style-type: none;
+}
+
+.popcorn-img {
+    width: 500px;
+    height: 330px;
+    margin-left: 200px;
+    margin-top: 160px;
+    border-radius: 6px;
 }
