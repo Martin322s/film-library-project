@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./styles/main-content.css";
+import styles from "./styles/main-content.module.css";
 import "./styles/responsive/responsive-600.css";
 import creed from "./images/creed.jfif";
 import fastX from "./images/fast-x.jpg";
@@ -10,8 +10,8 @@ const Home = () => {
     return (
         <main>
             <aside>
-                <h2 className="aside-heading">Categories</h2>
-                <ul className="categories">
+                <h2 className={styles["aside-heading"]}>Categories</h2>
+                <ul className={styles["categories"]}>
                     <li>Action</li>
                     <li>Comedy</li>
                     <li>Criminal</li>
@@ -34,14 +34,14 @@ const Home = () => {
                     <li>Drama</li>
                 </ul>
             </aside>
-            <section className="content">
-                <img className="main-photo" src={main} alt="main" />
-                <h3 className="latest">Latest Films...</h3>
-                <div className="films">
-                    <article className="film">
-                        <img className="film-img" src={fastX} alt="fast-x" />
+            <section className={styles["content"]}>
+                <img className={styles["main-photo"]} src={main} alt="main" />
+                <h3 className={styles["latest"]}>Latest Films...</h3>
+                <div className={styles["films"]}>
+                    <article className={styles["film"]}>
+                        <img className={styles["film-img"]} src={fastX} alt="fast-x" />
                         <Link
-                            className="link"
+                            className={styles["link"]}
                             to="https://www.youtube.com/watch?v=32RAq6JzY-w"
                             target="_blank"
                             rel="noreferrer"
