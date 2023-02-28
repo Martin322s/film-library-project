@@ -34,7 +34,6 @@ const Header = () => {
                 </li>
                 <li className={styles["nav-item-search"]}>
                     <input type="text" placeholder="Search" />
-                    <i className="search fas fa-search" />
                     <button className={styles["btn-search"]}>Search</button>
                 </li>
             </ul>

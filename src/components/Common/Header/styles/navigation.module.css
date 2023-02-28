@@ -33,6 +33,7 @@
 .nav-item-search input{
     width: 290px;
     height: 40px;
+    margin-right: 10px;
 }
 
 i.search {
@@ -58,8 +59,8 @@ i.search {
     padding: 20px;
 }
 
-i.fa-film {
-    margin-right: 10px;
-    margin-left: 10px;
+.header_heading i.fas.fa-film {
+    margin-right: 20px;
+    margin-left: 20px;
     font-size: 60px;
 }
