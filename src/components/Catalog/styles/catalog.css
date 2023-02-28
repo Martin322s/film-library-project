@@ -1,12 +1,26 @@
 ul.movies-list[role='list'] {
     margin-top: 40px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    gap: 60px;
     margin-bottom: 20px;
     margin-left: 70px;
-    width: 200px;
-    flex-direction: row;
+    width: 600px;
+    align-items: center;
+    justify-content: center;
+}
+
+ul.movies-list[role='list'] li p {
+    width: 220px;
+    text-align: justify;
+}
+
+ul.movies-list[role='list'] li img {
+    height: 220px;
+    width: 220px;
+}
+
+.film-heading {
+    text-align: center;
 }
 
 ul.catalog-categories[role='list'] {

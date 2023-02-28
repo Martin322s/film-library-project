@@ -38,241 +38,25 @@ const Catalog = () => {
                     <li>
                         <article className="film">
                             <img className="film-img" src={fastX} alt="fast-x" />
-                            <Link
-                                className="link"
-                                to="https://www.youtube.com/watch?v=32RAq6JzY-w"
-                                target="_blank"
-                                rel="noreferrer"
-                                replace
-                            >
-                                Watch Trailer
-                            </Link>
-                            <h2>Fast and Furious 10</h2>
+                            <h2 className="film-heading">Fast and Furious 10</h2>
                             <p>
                                 Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin,
-                                Zach Dean, and Dan Mazeau.
+                                action film directed by Louis Leterrier and written by Justin Lin and
+                                Zach Dean.
                             </p>
+                            <a href="/">Details</a>
                         </article>
                     </li>
                     <li>
                         <article className="film">
                             <img className="film-img" src={fastX} alt="fast-x" />
-                            <Link
-                                className="link"
-                                to="https://www.youtube.com/watch?v=32RAq6JzY-w"
-                                target="_blank"
-                                rel="noreferrer"
-                                replace
-                            >
-                                Watch Trailer
-                            </Link>
-                            <h2>Fast and Furious 10</h2>
+                            <h2 className="film-heading">Fast and Furious 10</h2>
                             <p>
                                 Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin,
-                                Zach Dean, and Dan Mazeau.
+                                action film directed by Louis Leterrier and written by Justin Lin and
+                                Zach Dean.
                             </p>
-                        </article>
-                    </li>
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <Link
-                                className="link"
-                                to="https://www.youtube.com/watch?v=32RAq6JzY-w"
-                                target="_blank"
-                                rel="noreferrer"
-                                replace
-                            >
-                                Watch Trailer
-                            </Link>
-                            <h2>Fast and Furious 10</h2>
-                            <p>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin,
-                                Zach Dean, and Dan Mazeau.
-                            </p>
-                        </article>
-                    </li>
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <Link
-                                className="link"
-                                to="https://www.youtube.com/watch?v=32RAq6JzY-w"
-                                target="_blank"
-                                rel="noreferrer"
-                                replace
-                            >
-                                Watch Trailer
-                            </Link>
-                            <h2>Fast and Furious 10</h2>
-                            <p>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin,
-                                Zach Dean, and Dan Mazeau.
-                            </p>
-                        </article>
-                    </li>
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <Link
-                                className="link"
-                                to="https://www.youtube.com/watch?v=32RAq6JzY-w"
-                                target="_blank"
-                                rel="noreferrer"
-                                replace
-                            >
-                                Watch Trailer
-                            </Link>
-                            <h2>Fast and Furious 10</h2>
-                            <p>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin,
-                                Zach Dean, and Dan Mazeau.
-                            </p>
-                        </article>
-                    </li>
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <Link
-                                className="link"
-                                to="https://www.youtube.com/watch?v=32RAq6JzY-w"
-                                target="_blank"
-                                rel="noreferrer"
-                                replace
-                            >
-                                Watch Trailer
-                            </Link>
-                            <h2>Fast and Furious 10</h2>
-                            <p>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin,
-                                Zach Dean, and Dan Mazeau.
-                            </p>
-                        </article>
-                    </li>
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <Link
-                                className="link"
-                                to="https://www.youtube.com/watch?v=32RAq6JzY-w"
-                                target="_blank"
-                                rel="noreferrer"
-                                replace
-                            >
-                                Watch Trailer
-                            </Link>
-                            <h2>Fast and Furious 10</h2>
-                            <p>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin,
-                                Zach Dean, and Dan Mazeau.
-                            </p>
-                        </article>
-                    </li>
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <Link
-                                className="link"
-                                to="https://www.youtube.com/watch?v=32RAq6JzY-w"
-                                target="_blank"
-                                rel="noreferrer"
-                                replace
-                            >
-                                Watch Trailer
-                            </Link>
-                            <h2>Fast and Furious 10</h2>
-                            <p>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin,
-                                Zach Dean, and Dan Mazeau.
-                            </p>
-                        </article>
-                    </li>
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <Link
-                                className="link"
-                                to="https://www.youtube.com/watch?v=32RAq6JzY-w"
-                                target="_blank"
-                                rel="noreferrer"
-                                replace
-                            >
-                                Watch Trailer
-                            </Link>
-                            <h2>Fast and Furious 10</h2>
-                            <p>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin,
-                                Zach Dean, and Dan Mazeau.
-                            </p>
-                        </article>
-                    </li>
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <Link
-                                className="link"
-                                to="https://www.youtube.com/watch?v=32RAq6JzY-w"
-                                target="_blank"
-                                rel="noreferrer"
-                                replace
-                            >
-                                Watch Trailer
-                            </Link>
-                            <h2>Fast and Furious 10</h2>
-                            <p>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin,
-                                Zach Dean, and Dan Mazeau.
-                            </p>
-                        </article>
-                    </li>
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <Link
-                                className="link"
-                                to="https://www.youtube.com/watch?v=32RAq6JzY-w"
-                                target="_blank"
-                                rel="noreferrer"
-                                replace
-                            >
-                                Watch Trailer
-                            </Link>
-                            <h2>Fast and Furious 10</h2>
-                            <p>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin,
-                                Zach Dean, and Dan Mazeau.
-                            </p>
-                        </article>
-                    </li>
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <Link
-                                className="link"
-                                to="https://www.youtube.com/watch?v=32RAq6JzY-w"
-                                target="_blank"
-                                rel="noreferrer"
-                                replace
-                            >
-                                Watch Trailer
-                            </Link>
-                            <h2>Fast and Furious 10</h2>
-                            <p>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin,
-                                Zach Dean, and Dan Mazeau.
-                            </p>
+                            <a href="/">Details</a>
                         </article>
                     </li>
                 </ul>
