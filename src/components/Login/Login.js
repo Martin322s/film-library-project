@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./styles/login.module.css";
 import "./styles/responsive/responsive.css";
+import people from "./images/people.webp";
 
 const Login = () => {
     // eslint-disable-next-line
@@ -29,6 +30,7 @@ const Login = () => {
                     <button className={styles["btn"]}>Sign In</button>
                 </form>
             </section>
+            <img className={styles["people"]} src={people} alt="people"/>
         </main>
     );
 }

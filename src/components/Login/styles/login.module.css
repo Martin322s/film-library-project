@@ -70,3 +70,10 @@ ul.categories {
 .categories li:nth-of-type(4) {
     list-style-type: none;
 }
+
+.people {
+    width: 400px;
+    height: 300px;
+    margin: 50px 20px 50px 300px;
+    border-radius: 6px;
+}
