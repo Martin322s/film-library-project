@@ -56,10 +56,10 @@ const Home = () => {
                             Zach Dean, and Dan Mazeau.
                         </p>
                     </article>
-                    <article className="film">
-                        <img className="film-img" src={creed} alt="creed" />
+                    <article className={styles["film"]}>
+                        <img className={styles["film-img"]} src={creed} alt="creed" />
                         <Link
-                            className="link"
+                            className={styles["link"]}
                             to="https://www.youtube.com/watch?v=AHmCH7iB_IM"
                             target="_blank"
                             rel="noreferrer"
@@ -73,10 +73,10 @@ const Home = () => {
                             B. Jordan ( in his directorial debut).
                         </p>
                     </article>
-                    <article className="film">
-                        <img className="film-img" src={meg} alt="meg" />
+                    <article className={styles["film"]}>
+                        <img className={styles["film-img"]} src={meg} alt="meg" />
                         <Link
-                            className="link"
+                            className={styles["link"]}
                             to="https://www.youtube.com/watch?v=Bpz8apWAhyw"
                             target="_blank"
                             rel="noreferrer"
