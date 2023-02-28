@@ -14,7 +14,7 @@ const Create = () => {
                 </ul>
             </aside>
             <section className={styles["content"]}>
-                <form className="create">
+                <form className={styles["create"]}>
                     <h1>Create publication</h1>
                     <label htmlFor="title">Title:</label>
                     <input type="text" name="title" id="title" />
@@ -25,7 +25,7 @@ const Create = () => {
                     <label htmlFor="description">Description:</label>
                     <textarea col="2000" rows="5"></textarea>
                     <div>
-                        <button className="btn">Create</button>
+                        <button className={styles["btn"]}>Create</button>
                     </div>
                 </form>
             </section>
