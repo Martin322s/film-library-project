@@ -1,4 +1,4 @@
-import "./styles/create.module.css";
+import styles from "./styles/create.module.css";
 
 const Create = () => {
     return (
