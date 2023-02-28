@@ -1,11 +1,11 @@
-import "./styles/navigation.css";
 import { Link } from "react-router-dom";
+import "./styles/navigation.module.css";
 import logo from "./images/logo.png";
 
 const Header = () => {
     return (
         // eslint-disable-next-line
-        <header className="heading">
+        <header className={styles["heading"]}>
         {/* eslint-disable-next-line */}
             <ul className="heading__navbar" role={"list"}>
                 <li className="nav-item-logo">

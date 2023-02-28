@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import fastX from "./images/fast-x.jpg";
-import styles from "./styles/catalog.css";
+import styles from "./styles/catalog.module.css";
 
 const Catalog = () => {
     //eslint-disable-next-line
