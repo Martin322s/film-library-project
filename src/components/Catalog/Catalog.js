@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 import fastX from "./images/fast-x.jpg";
-import "./styles/catalog.css";
+import styles from "./styles/catalog.css";
 
 const Catalog = () => {
     //eslint-disable-next-line
     return (
         <main>
             <aside>
-                <h2 className="aside-heading">Categories</h2>
+                <h2 className={styles["aside-heading"]}>Categories</h2>
                 {/* eslint-disable-next-line */}
-                <ul className="catalog-categories" role={"list"}>
+                <ul className={styles["catalog-categories"]} role={"list"}>
                     <li>Action</li>
                     <li>Comedy</li>
                     <li>Criminal</li>
@@ -32,14 +32,14 @@ const Catalog = () => {
                     <li>Drama</li>
                 </ul>
             </aside>
-            <section className="catalog">
+            <section className={styles["catalog"]}>
             {/* eslint-disable-next-line */}
-                <ul className="movies-list" role={"list"}>
+                <ul className={styles["movies-list"]} role={"list"}>
                     <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
+                        <article className={styles["film"]}>
+                            <img className={styles["film-img"]} src={fastX} alt="fast-x" />
                             <Link
-                                className="link"
+                                className={styles["link"]}
                                 to="https://www.youtube.com/watch?v=32RAq6JzY-w"
                                 target="_blank"
                                 rel="noreferrer"
@@ -56,10 +56,10 @@ const Catalog = () => {
                         </article>
                     </li>
                     <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
+                        <article className={styles["film"]}>
+                            <img className={styles["film-img"]} src={fastX} alt="fast-x" />
                             <Link
-                                className="link"
+                                className={styles["link"]}
                                 to="https://www.youtube.com/watch?v=32RAq6JzY-w"
                                 target="_blank"
                                 rel="noreferrer"
@@ -76,10 +76,10 @@ const Catalog = () => {
                         </article>
                     </li>
                     <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
+                        <article className={styles["film"]}>
+                            <img className={styles["film-img"]} src={fastX} alt="fast-x" />
                             <Link
-                                className="link"
+                                className={styles["link"]}
                                 to="https://www.youtube.com/watch?v=32RAq6JzY-w"
                                 target="_blank"
                                 rel="noreferrer"
@@ -96,10 +96,10 @@ const Catalog = () => {
                         </article>
                     </li>
                     <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
+                        <article className={styles["film"]}>
+                            <img className={styles["film-img"]} src={fastX} alt="fast-x" />
                             <Link
-                                className="link"
+                                className={styles["link"]}
                                 to="https://www.youtube.com/watch?v=32RAq6JzY-w"
                                 target="_blank"
                                 rel="noreferrer"
@@ -116,10 +116,10 @@ const Catalog = () => {
                         </article>
                     </li>
                     <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
+                        <article className={styles["film"]}>
+                            <img className={styles["film-img"]} src={fastX} alt="fast-x" />
                             <Link
-                                className="link"
+                                className={styles["link"]}
                                 to="https://www.youtube.com/watch?v=32RAq6JzY-w"
                                 target="_blank"
                                 rel="noreferrer"
@@ -136,10 +136,10 @@ const Catalog = () => {
                         </article>
                     </li>
                     <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
+                        <article className={styles["film"]}>
+                            <img className={styles["film-img"]} src={fastX} alt="fast-x" />
                             <Link
-                                className="link"
+                                className={styles["link"]}
                                 to="https://www.youtube.com/watch?v=32RAq6JzY-w"
                                 target="_blank"
                                 rel="noreferrer"
@@ -156,10 +156,10 @@ const Catalog = () => {
                         </article>
                     </li>
                     <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
+                        <article className={styles["film"]}>
+                            <img className={styles["film-img"]} src={fastX} alt="fast-x" />
                             <Link
-                                className="link"
+                                className={styles["link"]}
                                 to="https://www.youtube.com/watch?v=32RAq6JzY-w"
                                 target="_blank"
                                 rel="noreferrer"
@@ -176,10 +176,10 @@ const Catalog = () => {
                         </article>
                     </li>
                     <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
+                        <article className={styles["film"]}>
+                            <img className={styles["film-img"]} src={fastX} alt="fast-x" />
                             <Link
-                                className="link"
+                                className={styles["link"]}
                                 to="https://www.youtube.com/watch?v=32RAq6JzY-w"
                                 target="_blank"
                                 rel="noreferrer"
@@ -196,10 +196,10 @@ const Catalog = () => {
                         </article>
                     </li>
                     <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
+                        <article className={styles["film"]}>
+                            <img className={styles["film-img"]} src={fastX} alt="fast-x" />
                             <Link
-                                className="link"
+                                className={styles["link"]}
                                 to="https://www.youtube.com/watch?v=32RAq6JzY-w"
                                 target="_blank"
                                 rel="noreferrer"
@@ -216,10 +216,10 @@ const Catalog = () => {
                         </article>
                     </li>
                     <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
+                        <article className={styles["film"]}>
+                            <img className={styles["film-img"]} src={fastX} alt="fast-x" />
                             <Link
-                                className="link"
+                                className={styles["link"]}
                                 to="https://www.youtube.com/watch?v=32RAq6JzY-w"
                                 target="_blank"
                                 rel="noreferrer"
@@ -236,10 +236,10 @@ const Catalog = () => {
                         </article>
                     </li>
                     <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
+                        <article className={styles["film"]}>
+                            <img className={styles["film-img"]} src={fastX} alt="fast-x" />
                             <Link
-                                className="link"
+                                className={styles["link"]}
                                 to="https://www.youtube.com/watch?v=32RAq6JzY-w"
                                 target="_blank"
                                 rel="noreferrer"
@@ -256,10 +256,10 @@ const Catalog = () => {
                         </article>
                     </li>
                     <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
+                        <article className={styles["film"]}>
+                            <img className={styles["film-img"]} src={fastX} alt="fast-x" />
                             <Link
-                                className="link"
+                                className={styles["link"]}
                                 to="https://www.youtube.com/watch?v=32RAq6JzY-w"
                                 target="_blank"
                                 rel="noreferrer"
