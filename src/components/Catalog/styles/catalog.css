@@ -5,6 +5,8 @@ ul.movies-list[role='list'] {
     gap: 20px;
     margin-bottom: 20px;
     margin-left: 70px;
+    width: 200px;
+    flex-direction: row;
 }
 
 ul.catalog-categories[role='list'] {
