@@ -59,6 +59,84 @@ const Catalog = () => {
                             <a href="/">Details</a>
                         </article>
                     </li>
+
+                    <li>
+                        <article className="film">
+                            <img className="film-img" src={fastX} alt="fast-x" />
+                            <h2 className="film-heading">Fast and Furious 10</h2>
+                            <p>
+                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
+                                action film directed by Louis Leterrier and written by Justin Lin and
+                                Zach Dean.
+                            </p>
+                            <a href="/">Details</a>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article className="film">
+                            <img className="film-img" src={fastX} alt="fast-x" />
+                            <h2 className="film-heading">Fast and Furious 10</h2>
+                            <p>
+                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
+                                action film directed by Louis Leterrier and written by Justin Lin and
+                                Zach Dean.
+                            </p>
+                            <a href="/">Details</a>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article className="film">
+                            <img className="film-img" src={fastX} alt="fast-x" />
+                            <h2 className="film-heading">Fast and Furious 10</h2>
+                            <p>
+                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
+                                action film directed by Louis Leterrier and written by Justin Lin and
+                                Zach Dean.
+                            </p>
+                            <a href="/">Details</a>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article className="film">
+                            <img className="film-img" src={fastX} alt="fast-x" />
+                            <h2 className="film-heading">Fast and Furious 10</h2>
+                            <p>
+                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
+                                action film directed by Louis Leterrier and written by Justin Lin and
+                                Zach Dean.
+                            </p>
+                            <a href="/">Details</a>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article className="film">
+                            <img className="film-img" src={fastX} alt="fast-x" />
+                            <h2 className="film-heading">Fast and Furious 10</h2>
+                            <p>
+                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
+                                action film directed by Louis Leterrier and written by Justin Lin and
+                                Zach Dean.
+                            </p>
+                            <a href="/">Details</a>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article className="film">
+                            <img className="film-img" src={fastX} alt="fast-x" />
+                            <h2 className="film-heading">Fast and Furious 10</h2>
+                            <p>
+                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
+                                action film directed by Louis Leterrier and written by Justin Lin and
+                                Zach Dean.
+                            </p>
+                            <a href="/">Details</a>
+                        </article>
+                    </li>
                 </ul>
             </section>
         </main>

@@ -1,12 +1,18 @@
+.catalog {
+    display: flex;
+}
+
 ul.movies-list[role='list'] {
-    margin-top: 40px;
+    margin-top: 37px;
     display: flex;
     gap: 60px;
     margin-bottom: 20px;
-    margin-left: 70px;
+    margin-left: 20px;
     width: 600px;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex: 1 1 80px;
 }
 
 ul.movies-list[role='list'] li p {
