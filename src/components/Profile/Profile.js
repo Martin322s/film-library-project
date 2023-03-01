@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./styles/profile.module.css";
 import fastX from "./images/fast-x.jpg";
 
@@ -19,7 +20,7 @@ const Profile = () => {
                                 action film directed by Louis Leterrier and written by Justin Lin and
                                 Zach Dean.
                             </p>
-                            <a href="/">Details</a>
+                            <Link className="link-details" to="/">Details</Link>
                         </article>
                     </li>
                     <li>
@@ -31,7 +32,7 @@ const Profile = () => {
                                 action film directed by Louis Leterrier and written by Justin Lin and
                                 Zach Dean.
                             </p>
-                            <a href="/">Details</a>
+                            <Link className="link-details" to="/">Details</Link>
                         </article>
                     </li>
 
@@ -44,7 +45,7 @@ const Profile = () => {
                                 action film directed by Louis Leterrier and written by Justin Lin and
                                 Zach Dean.
                             </p>
-                            <a href="/">Details</a>
+                            <Link className="link-details" to="/">Details</Link>
                         </article>
                     </li>
                 </ul>
@@ -59,7 +60,7 @@ const Profile = () => {
                                 action film directed by Louis Leterrier and written by Justin Lin and
                                 Zach Dean.
                             </p>
-                            <a href="/">Details</a>
+                            <Link className="link-details" to="/">Details</Link>
                         </article>
                     </li>
                     <li>
@@ -71,7 +72,7 @@ const Profile = () => {
                                 action film directed by Louis Leterrier and written by Justin Lin and
                                 Zach Dean.
                             </p>
-                            <a href="/">Details</a>
+                            <Link className="link-details" to="/">Details</Link>
                         </article>
                     </li>
 
@@ -84,7 +85,7 @@ const Profile = () => {
                                 action film directed by Louis Leterrier and written by Justin Lin and
                                 Zach Dean.
                             </p>
-                            <a href="/">Details</a>
+                            <Link className="link-details" to="/">Details</Link>
                         </article>
                     </li>
                 </ul>
