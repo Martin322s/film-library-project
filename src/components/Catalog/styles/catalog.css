@@ -1,7 +1,7 @@
 ul.movies-list[role='list'] {
     margin-top: 40px;
     display: flex;
-    gap: 60px;
+    gap: 50px;
     margin-bottom: 20px;
     margin-left: 20px;
     align-items: center;
@@ -12,6 +12,7 @@ ul.movies-list[role='list'] {
 ul.movies-list[role='list'] li p {
     width: 220px;
     text-align: justify;
+    margin-bottom: 20px;
 }
 
 ul.movies-list[role='list'] li img {
@@ -37,4 +38,17 @@ ul.catalog-categories[role='list'] {
     text-align: center;
     font-size: 50px;
     margin-left: 240px;
+}
+
+.link-details {
+    border: 1px solid black;
+    padding: 5px 20px;
+    background-color: grey;
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+}
+
+.link-details:hover {
+    color: gold;
 }
