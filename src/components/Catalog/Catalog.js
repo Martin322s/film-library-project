@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import fastX from "./images/fast-x.jpg";
 import "./styles/catalog.css";
 
@@ -35,7 +34,7 @@ const Catalog = () => {
             <section className="catalog">
             <h1 className="empty-catalog">There are no publications yet.</h1>
             {/* eslint-disable-next-line */}
-                {/* <ul className="movies-list" role={"list"}>
+                <ul className="movies-list" role={"list"}>
                     <li>
                         <article className="film">
                             <img className="film-img" src={fastX} alt="fast-x" />
@@ -138,7 +137,7 @@ const Catalog = () => {
                             <a href="/">Details</a>
                         </article>
                     </li>
-                </ul> */}
+                </ul>
             </section>
         </main>
     );

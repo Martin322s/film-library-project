@@ -1,5 +1,4 @@
 import styles from "./styles/create.module.css";
-import popcorn from "./images/popcorn.jpg";
 
 const Create = () => {
     return (
@@ -30,7 +29,6 @@ const Create = () => {
                     </div>
                 </form>
             </section>
-            <img className={styles["popcorn-img"]} src={popcorn} alt="popcorn" />
         </main>
     );
 }
