@@ -33,7 +33,7 @@ const Catalog = () => {
                 </ul>
             </aside>
             <section className="catalog">
-            <h1 className="empty-catalog">There are no publications yet.</h1>
+            {/* <h1 className="empty-catalog">There are no publications yet.</h1> */}
             {/* eslint-disable-next-line */}
                 <ul className="movies-list" role={"list"}>
                     <li>

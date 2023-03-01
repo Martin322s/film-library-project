@@ -38,6 +38,9 @@ ul.catalog-categories[role='list'] {
     text-align: center;
     font-size: 50px;
     margin-left: 240px;
+    position: relative;
+    top: 40%;
+    left: 20%;
 }
 
 .link-details {
