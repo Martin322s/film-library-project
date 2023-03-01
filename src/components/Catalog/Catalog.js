@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import fastX from "./images/fast-x.jpg";
 import "./styles/catalog.css";
 
@@ -44,7 +45,7 @@ const Catalog = () => {
                                 action film directed by Louis Leterrier and written by Justin Lin and
                                 Zach Dean.
                             </p>
-                            <a href="/">Details</a>
+                            <Link className={styles["link-details"]} to="/">Details</Link>
                         </article>
                     </li>
                     <li>
@@ -56,20 +57,7 @@ const Catalog = () => {
                                 action film directed by Louis Leterrier and written by Justin Lin and
                                 Zach Dean.
                             </p>
-                            <a href="/">Details</a>
-                        </article>
-                    </li>
-
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <h2 className="film-heading">Fast and Furious 10</h2>
-                            <p>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin and
-                                Zach Dean.
-                            </p>
-                            <a href="/">Details</a>
+                            <Link className={styles["link-details"]} to="/">Details</Link>
                         </article>
                     </li>
 
@@ -82,7 +70,7 @@ const Catalog = () => {
                                 action film directed by Louis Leterrier and written by Justin Lin and
                                 Zach Dean.
                             </p>
-                            <a href="/">Details</a>
+                            <Link className={styles["link-details"]} to="/">Details</Link>
                         </article>
                     </li>
 
@@ -95,7 +83,7 @@ const Catalog = () => {
                                 action film directed by Louis Leterrier and written by Justin Lin and
                                 Zach Dean.
                             </p>
-                            <a href="/">Details</a>
+                            <Link className={styles["link-details"]} to="/">Details</Link>
                         </article>
                     </li>
 
@@ -108,7 +96,7 @@ const Catalog = () => {
                                 action film directed by Louis Leterrier and written by Justin Lin and
                                 Zach Dean.
                             </p>
-                            <a href="/">Details</a>
+                            <Link className={styles["link-details"]} to="/">Details</Link>
                         </article>
                     </li>
 
@@ -121,7 +109,7 @@ const Catalog = () => {
                                 action film directed by Louis Leterrier and written by Justin Lin and
                                 Zach Dean.
                             </p>
-                            <a href="/">Details</a>
+                            <Link className={styles["link-details"]} to="/">Details</Link>
                         </article>
                     </li>
 
@@ -134,7 +122,20 @@ const Catalog = () => {
                                 action film directed by Louis Leterrier and written by Justin Lin and
                                 Zach Dean.
                             </p>
-                            <a href="/">Details</a>
+                            <Link className={styles["link-details"]} to="/">Details</Link>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article className="film">
+                            <img className="film-img" src={fastX} alt="fast-x" />
+                            <h2 className="film-heading">Fast and Furious 10</h2>
+                            <p>
+                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
+                                action film directed by Louis Leterrier and written by Justin Lin and
+                                Zach Dean.
+                            </p>
+                            <Link className={styles["link-details"]} to="/">Details</Link>
                         </article>
                     </li>
                 </ul>
