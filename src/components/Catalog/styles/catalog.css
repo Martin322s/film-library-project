@@ -32,3 +32,9 @@ ul.catalog-categories[role='list'] {
     padding: 10px;
     list-style-type: none;
 }
+
+.empty-catalog {
+    text-align: center;
+    font-size: 50px;
+    margin-left: 240px;
+}
