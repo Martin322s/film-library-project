@@ -30,7 +30,7 @@ const Header = () => {
                             <Link to="/create">Create</Link>
                         </li>
                         <li className={styles["nav-item"]}>
-                            <Link to="/">Logout</Link>
+                            <Link to="/logout">Logout</Link>
                         </li>
                     </>
                     :
