@@ -7,11 +7,13 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Profile from "./components/Profile/Profile";
 import Register from "./components/Register/Register";
+import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
     return (
         <>
-            <Header />
+            <AuthProvider>
+                <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
@@ -19,8 +21,9 @@ function App() {
                     <Route path="/create" element={<Create />} />
                     <Route path="/catalog" element={<Catalog />} />
                     <Route path="/profile" element={<Profile />} />
-                </Routes>    
-            <Footer />
+                </Routes>
+                <Footer />
+            </AuthProvider>
         </>
     );
 }
