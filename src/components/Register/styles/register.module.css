@@ -5,10 +5,10 @@ main {
 .register {
     border: 1px solid black;
     position: relative;
-    top: 10%;
+    top: 3%;
     left: 40%;
     padding: 30px;
-    margin-bottom: 120px;
+    margin-bottom: 90px;
     background-color: rgb(241, 203, 156);
 }
 
@@ -21,6 +21,7 @@ main {
 .register label {
     display: block;
     margin-top: 10px;
+    font-size: 20px;
 }
 
 .register input {
@@ -69,4 +70,24 @@ ul.categories {
 
 .categories li:nth-of-type(4) {
     list-style-type: none;
+}
+
+legend {
+    font-size: 20px;
+}
+
+fieldset {
+    margin-bottom: 5px;
+}
+
+fieldset ol li {
+    font-size: 18px;
+}
+
+.correct {
+    color: rgb(33, 199, 33);
+}
+
+.wrong {
+    color: rgb(255, 0, 0);
 }

@@ -20,29 +20,38 @@ const Register = () => {
             ...state,
             [ev.target.name]: ev.target.value
         }));
+
+        console.log(data.password);
     };
 
     const submitHandler = (ev, userData) => {
         ev.preventDefault();
 
-        if (userData.password !== userData.rePass) {
-            alert("Invalid data provided!");
+        if (userData.password.length < 8
+            || !/[A-Z]/.test(userData.password)
+            || !/[0-9]/.test(userData.password)
+        ) {
+            alert("Please enter a valid password!");
         } else {
-            try {
-                const emailRegExp = new RegExp('^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+.[a-zA-Z]{2})$');
-                if (emailRegExp.test(userData.email)) {
-                    service.registerUser(userData)
-                        .then(result => {
-                            if (typeof result !== "string") {
-                                userLogin(result);
-                                navigate("/", { replace: true });
-                            } else {
-                                alert("User with this name already exists!");
-                            }
-                        });
+            if (userData.password !== userData.rePass) {
+                alert("Invalid data provided!");
+            } else {
+                try {
+                    const emailRegExp = new RegExp('^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+.[a-zA-Z]{2})$');
+                    if (emailRegExp.test(userData.email)) {
+                        service.registerUser(userData)
+                            .then(result => {
+                                if (typeof result !== "string") {
+                                    userLogin(result);
+                                    navigate("/", { replace: true });
+                                } else {
+                                    alert("User with this name already exists!");
+                                }
+                            });
+                    }
+                } catch (err) {
+                    alert(err);
                 }
-            } catch (err) {
-                alert(err);
             }
         }
     };
@@ -96,15 +105,34 @@ const Register = () => {
                         onChange={(ev) => changeHandler(ev)}
                     />
 
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        name="password"
-                        id="password"
-                        required
-                        value={data.password}
-                        onChange={(ev) => changeHandler(ev)}
-                    />
+                    <fieldset id="password-field">
+                        <legend>Password</legend>
+                        <ol>
+                            <li 
+                                className={data.password.length >= 8 ? styles["correct"] : styles["wrong"]}
+                            >
+                                At least 8 characters long
+                            </li>
+                            <li
+                                className={/[A-Z]/.test(data.password) ? styles["correct"] : styles["wrong"]}
+                            >
+                                At least 1 upper case character
+                            </li>
+                            <li
+                                className={/[0-9]/.test(data.password) ? styles["correct"] : styles["wrong"]}
+                            >
+                                At least 1 numeric character
+                            </li>
+                        </ol>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            required
+                            value={data.password}
+                            onChange={(ev) => changeHandler(ev)}
+                        />
+                    </fieldset>
 
                     <label htmlFor="rePass">Confirm Password:</label>
                     <input
@@ -112,7 +140,7 @@ const Register = () => {
                         name="rePass"
                         id="rePass"
                         required
-                        value={data.rePassword}
+                        value={data.rePass}
                         onChange={(ev) => changeHandler(ev)}
                     />
 
