@@ -20,8 +20,6 @@ const Register = () => {
             ...state,
             [ev.target.name]: ev.target.value
         }));
-
-        console.log(data.password);
     };
 
     const submitHandler = (ev, userData) => {
