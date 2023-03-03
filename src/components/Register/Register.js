@@ -1,15 +1,18 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 import * as service from "../../services/authService";
 import styles from "./styles/register.module.css";
 
 const Register = () => {
+    const { userLogin } = useContext(AuthContext);
+    const navigate = useNavigate();
     const [data, setData] = useState({
         firstName: "",
         lastName: "",
         email: "",
         password: "",
-        rePassword: ""
+        rePass: ""
     });
 
     const changeHandler = (ev) => {
@@ -22,16 +25,17 @@ const Register = () => {
     const submitHandler = (ev, userData) => {
         ev.preventDefault();
 
-        if (userData.password !== userData.rePassword) {
+        if (userData.password !== userData.rePass) {
             alert("Invalid data provided!");
         } else {
             try {
                 service.registerUser(userData)
                     .then(result => {
-                        console.log(result);
-                    })
+                        userLogin(userLogin);
+                        navigate("/", { replace: true });
+                    });
             } catch (err) {
-
+                alert(err);
             }
         }
     };
@@ -95,11 +99,11 @@ const Register = () => {
                         onChange={(ev) => changeHandler(ev)}
                     />
 
-                    <label htmlFor="rePassword">Confirm Password:</label>
+                    <label htmlFor="rePass">Confirm Password:</label>
                     <input
                         type="password"
-                        name="rePassword"
-                        id="rePassword"
+                        name="rePass"
+                        id="rePass"
                         required
                         value={data.rePassword}
                         onChange={(ev) => changeHandler(ev)}
