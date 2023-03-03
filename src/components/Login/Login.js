@@ -32,7 +32,7 @@ const Login = () => {
                 if (emailRegExp.test(userData.email)) {
                     service.loginUser(userData)
                         .then(result => {
-                            if (typeof result !== "string") {
+                            if (!result.message) {
                                 userLogin(result);
                                 navigate("/", { replace: true });
                             } else {
