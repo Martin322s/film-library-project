@@ -1,9 +1,51 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
+import * as service from "../../services/authService";
 import styles from "./styles/login.module.css";
 import "./styles/responsive/responsive.css";
 import people from "./images/people.webp";
 
 const Login = () => {
+    const { userLogin } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const [data, setData] = useState({
+        email: "",
+        password: ""
+    });
+
+    const changeHandler = (ev) => {
+        setData(state => ({
+            ...state,
+            [ev.target.name]: ev.target.value
+        }));
+    };
+
+    const submitHandler = (ev, userData) => {
+        ev.preventDefault();
+
+        if (userData.email === "" || userData.password === "") {
+            alert("Invalid data provided!");
+        } else {
+            try {
+                const emailRegExp = new RegExp('^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+.[a-zA-Z]{2})$');
+                if (emailRegExp.test(userData.email)) {
+                    service.loginUser(userData)
+                        .then(result => {
+                            if (typeof result !== "string") {
+                                userLogin(result);
+                                navigate("/", { replace: true });
+                            } else {
+                                alert("Invalid email or password!");
+                            }
+                        });
+                }
+            } catch (err) {
+                alert(err);
+            }
+        }
+    };
+
     // eslint-disable-next-line
     return (
         <main>
@@ -18,19 +60,36 @@ const Login = () => {
                 </ul>
             </aside>
             <section className={styles["content"]}>
-                <form className={styles["login"]}>
+                <form
+                    className={styles["login"]}
+                    onSubmit={(ev) => submitHandler(ev, data)}
+                >
                     <h1>Sign In to your account</h1>
                     <label htmlFor="email">Email:</label>
-                    <input type="email" name="email" id="email" />
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        required
+                        value={data.email}
+                        onChange={(ev) => changeHandler(ev)}
+                    />
                     <label htmlFor="password">Password:</label>
-                    <input type="password" name="password" id="password" />
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        required
+                        value={data.password}
+                        onChange={(ev) => changeHandler(ev)}
+                    />
                     <p>
                         You don't have an account? <Link to="/register" replace>Sign Up</Link>
                     </p>
                     <button className={styles["btn"]}>Sign In</button>
                 </form>
             </section>
-            <img className={styles["people"]} src={people} alt="people"/>
+            <img className={styles["people"]} src={people} alt="people" />
         </main>
     );
 }
