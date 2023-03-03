@@ -29,15 +29,18 @@ const Register = () => {
             alert("Invalid data provided!");
         } else {
             try {
-                service.registerUser(userData)
-                    .then(result => {
-                        if (typeof result !== "string") {
-                            userLogin(result);
-                            navigate("/", { replace: true });
-                        } else {
-                            alert("User with this name already exists!");
-                        }
-                    });
+                const emailRegExp = new RegExp('^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+\.[a-zA-Z]{2})$');
+                if (emailRegExp.test(userData.email)) {
+                    service.registerUser(userData)
+                        .then(result => {
+                            if (typeof result !== "string") {
+                                userLogin(result);
+                                navigate("/", { replace: true });
+                            } else {
+                                alert("User with this name already exists!");
+                            }
+                        });
+                }
             } catch (err) {
                 alert(err);
             }
