@@ -31,8 +31,12 @@ const Register = () => {
             try {
                 service.registerUser(userData)
                     .then(result => {
-                        userLogin(userLogin);
-                        navigate("/", { replace: true });
+                        if (typeof result !== "string") {
+                            userLogin(result);
+                            navigate("/", { replace: true });
+                        } else {
+                            alert("User with this name already exists!");
+                        }
                     });
             } catch (err) {
                 alert(err);
