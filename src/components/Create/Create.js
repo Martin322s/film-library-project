@@ -46,6 +46,7 @@ const Create = () => {
                         id="title" 
                         value={data.title}
                         onChange={(ev) => changeHandler(ev)}
+                        required
                     />
                     <label htmlFor="category">Category:</label>
                     <input 
@@ -54,6 +55,7 @@ const Create = () => {
                         id="category" 
                         value={data.category}
                         onChange={(ev) => changeHandler(ev)}
+                        required
                     />
                     <label htmlFor="imageUrl">Image URL:</label>
                     <input 
@@ -62,6 +64,7 @@ const Create = () => {
                         id="imageUrl" 
                         value={data.imageUrl}
                         onChange={(ev) => changeHandler(ev)}
+                        required
                     />
                     <label htmlFor="description">Description:</label>
                     <textarea 
@@ -70,6 +73,7 @@ const Create = () => {
                         name="description"
                         value={data.description}
                         onChange={(ev) => changeHandler(ev)}
+                        required
                     ></textarea>
                     <div>
                         <button className={styles["btn"]}>Create</button>
