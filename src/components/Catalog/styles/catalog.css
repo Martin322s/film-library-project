@@ -1,17 +1,17 @@
 ul.movies-list[role='list'] {
     margin-top: 40px;
     display: flex;
-    gap: 50px;
+    gap: 15px;
     margin-bottom: 20px;
     margin-left: 20px;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 ul.movies-list[role='list'] li p {
     width: 220px;
-    height: 115px;
+    height: 140px;
     text-align: justify;
     margin-bottom: 20px;
 }
@@ -21,8 +21,20 @@ ul.movies-list[role='list'] li img {
     width: 220px;
 }
 
+.film {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    border: 2px solid black;
+    padding: 10px;
+    flex-shrink: 1;
+}
+
 .film-heading {
     text-align: center;
+    width: 220px;
+    margin-bottom: 20px;
 }
 
 ul.catalog-categories[role='list'] {
@@ -51,7 +63,16 @@ ul.catalog-categories[role='list'] {
     font-size: 18px;
     color: black;
     font-weight: 600;
+    width: 100%;
+    text-align: center;
 }
+
+/* .btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+} */
 
 .link-details:hover {
     color: gold;

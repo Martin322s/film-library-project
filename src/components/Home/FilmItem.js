@@ -1,17 +1,14 @@
+import { Link } from "react-router-dom";
 import styles from "./styles/main-content.module.css";
 
 const FilmItem = ({
     title,
-    imageUrl,
-    content
+    imageUrl
 }) => {
     return (
         <article className={styles["film"]}>
             <img className={styles["film-img"]} src={imageUrl} alt="creed" />
-            <h2>{title}</h2>
-            <p>
-                {content}
-            </p>
+            <h2 className={styles["home-img-heading"]}>{title}</h2>
         </article>
     );
 }
