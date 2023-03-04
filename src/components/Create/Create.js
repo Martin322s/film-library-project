@@ -1,6 +1,26 @@
+import { useState } from "react";
 import styles from "./styles/create.module.css";
 
 const Create = () => {
+    const [data, setData] = useState({
+        title: "",
+        category: "",
+        imageUrl: "",
+        description: ""
+    });
+
+    const changeHandler = (ev) => {
+        setData(state => ({
+            ...state,
+            [ev.target.name]: ev.target.value
+        }));
+    };
+
+    const createHandler = (ev) => {
+        ev.preventDefault();
+        console.log(data);
+    };
+
     return (
         <main>
             <aside>
@@ -14,16 +34,43 @@ const Create = () => {
                 </ul>
             </aside>
             <section className={styles["content"]}>
-                <form className={styles["create"]}>
+                <form 
+                    className={styles["create"]}
+                    onSubmit={(ev) => createHandler(ev)}
+                >
                     <h1>Create publication</h1>
                     <label htmlFor="title">Title:</label>
-                    <input type="text" name="title" id="title" />
+                    <input 
+                        type="text" 
+                        name="title" 
+                        id="title" 
+                        value={data.title}
+                        onChange={(ev) => changeHandler(ev)}
+                    />
                     <label htmlFor="category">Category:</label>
-                    <input type="text" name="category" id="category" />
+                    <input 
+                        type="text" 
+                        name="category" 
+                        id="category" 
+                        value={data.category}
+                        onChange={(ev) => changeHandler(ev)}
+                    />
                     <label htmlFor="imageUrl">Image URL:</label>
-                    <input type="url" name="imageUrl" id="imageUrl" />
+                    <input 
+                        type="url" 
+                        name="imageUrl" 
+                        id="imageUrl" 
+                        value={data.imageUrl}
+                        onChange={(ev) => changeHandler(ev)}
+                    />
                     <label htmlFor="description">Description:</label>
-                    <textarea col="2000" rows="5"></textarea>
+                    <textarea 
+                        col="2000" 
+                        rows="5"
+                        name="description"
+                        value={data.description}
+                        onChange={(ev) => changeHandler(ev)}
+                    ></textarea>
                     <div>
                         <button className={styles["btn"]}>Create</button>
                     </div>
