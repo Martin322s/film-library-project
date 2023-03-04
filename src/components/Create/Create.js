@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
+import * as service from "../../services/filmService";
 import styles from "./styles/create.module.css";
 
 const Create = () => {
+    const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const token = user.accessToken;
+    const _ownerId = user._id;
     const [data, setData] = useState({
         title: "",
         category: "",
         imageUrl: "",
-        description: ""
+        content: ""
     });
 
     const changeHandler = (ev) => {
@@ -16,9 +23,21 @@ const Create = () => {
         }));
     };
 
-    const createHandler = (ev) => {
+    const createHandler = (ev, filmData) => {
         ev.preventDefault();
-        console.log(data);
+        
+        if (!filmData.imageUrl.startsWith("https://")) {
+            alert("Please enter a valid URL address");
+        } else {
+            try {
+                service.createFilm({ ...filmData, _ownerId }, token)
+                    .then(result => {
+                        navigate("/catalog", { replace: true });
+                    });
+            } catch (err) {
+                alert(err);
+            }
+        }
     };
 
     return (
@@ -36,7 +55,7 @@ const Create = () => {
             <section className={styles["content"]}>
                 <form 
                     className={styles["create"]}
-                    onSubmit={(ev) => createHandler(ev)}
+                    onSubmit={(ev) => createHandler(ev, data)}
                 >
                     <h1>Create publication</h1>
                     <label htmlFor="title">Title:</label>
@@ -66,12 +85,12 @@ const Create = () => {
                         onChange={(ev) => changeHandler(ev)}
                         required
                     />
-                    <label htmlFor="description">Description:</label>
+                    <label htmlFor="content">content:</label>
                     <textarea 
                         col="2000" 
                         rows="5"
-                        name="description"
-                        value={data.description}
+                        name="content"
+                        value={data.content}
                         onChange={(ev) => changeHandler(ev)}
                         required
                     ></textarea>
