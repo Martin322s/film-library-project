@@ -1,6 +1,18 @@
+import { useEffect, useState } from "react";
+import * as service from "../../services/filmService";
+import CatalogItem from "./CatalogItem";
 import "./styles/catalog.css";
 
 const Catalog = () => {
+    const [films, setFilms] = useState([]);
+
+    useEffect(() => {
+        service.getAll()
+            .then(result => {
+                setFilms(result);
+            });
+    }, []);
+
     //eslint-disable-next-line
     return (
         <main>
@@ -31,12 +43,19 @@ const Catalog = () => {
                 </ul>
             </aside>
             <section className="catalog">
-                <h1 className="empty-catalog">There are no publications yet.</h1>
+
                 {/* eslint-disable-next-line */}
                 <ul className="movies-list" role={"list"}>
-                    <li>
-                        
-                    </li>
+                    {films.length > 0
+                        ?
+                        films.map(film =>
+                            <li key={film._id}>
+                                <CatalogItem {...film} />
+                            </li>
+                        )
+                        :
+                        <h1 className="empty-catalog">There are no publications yet.</h1>
+                    }
                 </ul>
             </section>
         </main>
