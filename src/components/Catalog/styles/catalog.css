@@ -11,6 +11,7 @@ ul.movies-list[role='list'] {
 
 ul.movies-list[role='list'] li p {
     width: 220px;
+    height: 115px;
     text-align: justify;
     margin-bottom: 20px;
 }
