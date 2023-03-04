@@ -1,12 +1,21 @@
-import { Link } from "react-router-dom";
 import styles from "./styles/main-content.module.css";
 import "./styles/responsive/responsive-600.css";
-import creed from "./images/creed.jfif";
-import fastX from "./images/fast-x.jpg";
-import meg from "./images/meg.jpg";
+import * as service from "../../services/filmService";
 import main from "./images/main-two.jpeg";
+import FilmItem from "./FilmItem";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+    const [films, setFilms] = useState([]);
+
+    useEffect(() => {
+        service.getAll()
+            .then(result => {
+                const lastThree = result.slice(-3);
+                setFilms(lastThree);
+            })
+    }, []);
+
     return (
         <main>
             <aside>
@@ -38,60 +47,12 @@ const Home = () => {
                 <img className={styles["main-photo"]} src={main} alt="main" />
                 <h3 className={styles["latest"]}>Latest Films...</h3>
                 <div className={styles["films"]}>
-                    <article className={styles["film"]}>
-                        <img className={styles["film-img"]} src={fastX} alt="fast-x" />
-                        <Link
-                            className={styles["link"]}
-                            to="https://www.youtube.com/watch?v=32RAq6JzY-w"
-                            target="_blank"
-                            rel="noreferrer"
-                            replace
-                        >
-                            Watch Trailer
-                        </Link>
-                        <h2>Fast and Furious 10</h2>
-                        <p>
-                            Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                            action film directed by Louis Leterrier and written by Justin Lin,
-                            Zach Dean, and Dan Mazeau.
-                        </p>
-                    </article>
-                    <article className={styles["film"]}>
-                        <img className={styles["film-img"]} src={creed} alt="creed" />
-                        <Link
-                            className={styles["link"]}
-                            to="https://www.youtube.com/watch?v=AHmCH7iB_IM"
-                            target="_blank"
-                            rel="noreferrer"
-                            replace
-                        >
-                            Watch Trailer
-                        </Link>
-                        <h2>Creed III</h2>
-                        <p>
-                            Creed III is a 2022 American sports drama film directed by Michael
-                            B. Jordan ( in his directorial debut).
-                        </p>
-                    </article>
-                    <article className={styles["film"]}>
-                        <img className={styles["film-img"]} src={meg} alt="meg" />
-                        <Link
-                            className={styles["link"]}
-                            to="https://www.youtube.com/watch?v=Bpz8apWAhyw"
-                            target="_blank"
-                            rel="noreferrer"
-                            replace
-                        >
-                            Watch Trailer
-                        </Link>
-                        <h2>The Meg II</h2>
-                        <p>
-                            Mega Beast 2 is an upcoming 2023 American science fiction action
-                            film directed by Ben Whitley, written by Dean Georgaris, John Hoeber
-                            and Erich Hoeber, based on the book The Trench written by Steve
-                            Olton.
-                        </p>
-                    </article>
+                    {films.length > 0
+                        ?
+                        films.map(film => <FilmItem key={film._id} {...film} />)
+                        :
+                        <h1 className="empty-catalog">There are no publications yet.</h1>
+                    }
                 </div>
             </section>
         </main>
