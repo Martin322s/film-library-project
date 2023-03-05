@@ -51,7 +51,7 @@ const Home = () => {
                         ?
                         films.map(film => <FilmItem key={film._id} {...film} />)
                         :
-                        <h1 className="empty-catalog">There are no publications yet.</h1>
+                        <h1 className="empty-catalog-home">There are no publications yet.</h1>
                     }
                 </div>
             </section>
