@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 
 const CatalogItem = ({
+    _id,
     title,
-    imageUrl,
-    content
+    imageUrl
 }) => {
     return (
         <article className="film">
             <img className="film-img" src={imageUrl} alt="fast-x" />
             <h2 className="film-heading">{title}</h2>
-            <Link className="link-details" to="/">Details</Link>
+            <Link className="link-details" to={`/details/${_id}`}>Details</Link>
         </article>
     );
 }
