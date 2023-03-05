@@ -28,13 +28,14 @@ ul.movies-list[role='list'] li img {
     justify-content: center;
     border: 2px solid black;
     padding: 10px;
-    flex-shrink: 1;
+    width: 240px;
 }
 
 .film-heading {
     text-align: center;
     width: 220px;
     margin-bottom: 20px;
+    height: 70px;
 }
 
 ul.catalog-categories[role='list'] {
@@ -66,13 +67,6 @@ ul.catalog-categories[role='list'] {
     width: 100%;
     text-align: center;
 }
-
-/* .btn-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-} */
 
 .link-details:hover {
     color: gold;

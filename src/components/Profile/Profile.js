@@ -1,93 +1,42 @@
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 import styles from "./styles/profile.module.css";
-import fastX from "./images/fast-x.jpg";
+import * as service from "../../services/filmService";
+import ProfileFilmItem from "./ProfileFilmItem";
 
 const Profile = () => {
+    const { user } = useContext(AuthContext);
+    const [films, setFilms] = useState([]);
+
+    useEffect(() => {
+        service.getAll()
+            .then(result => {
+                setFilms(result);
+            })
+    }, []);
+
     return (
         <section>
-            <h1 className={styles["welcome-user"]}>Full Name: Peter Petrov</h1>
-            <h1 className={styles["welcome-user-email"]}>Email: user@mail.com</h1>
+            <h1 className={styles["welcome-user"]}>Full Name: {`${user.firstName} ${user.lastName}`}</h1>
+            <h1 className={styles["welcome-user-email"]}>Email: {user.email}</h1>
 
             <article className={styles["user-publications"]}>
                 <ul className={styles["created-publications"]} role={"list"}>
                 <h3 className={styles["headings"]}>Created publications:</h3>
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <h2 className="film-heading-user">Fast and Furious 10</h2>
-                            <p className={styles["film-details"]}>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin and
-                                Zach Dean.
-                            </p>
-                            <Link className="link-details" to="/">Details</Link>
-                        </article>
-                    </li>
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <h2 className="film-heading-user">Fast and Furious 10</h2>
-                            <p className={styles["film-details"]}>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin and
-                                Zach Dean.
-                            </p>
-                            <Link className="link-details" to="/">Details</Link>
-                        </article>
-                    </li>
-
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <h2 className="film-heading-user">Fast and Furious 10</h2>
-                            <p className={styles["film-details"]}>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin and
-                                Zach Dean.
-                            </p>
-                            <Link className="link-details" to="/">Details</Link>
-                        </article>
-                    </li>
+                    {films.length > 0
+                        ?
+                        films.map(film => (
+                            <li key={film._id}>
+                                <ProfileFilmItem {...film} />
+                            </li>
+                        ))
+                        :
+                        <h3 className={styles["headings-created"]}>There are no created publications.</h3>
+                    }
                 </ul>
                 <ul className={styles["shared-publications"]} role={"list"}>
                 <h3 className={styles["headings"]}>Shared publications:</h3>
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <h2 className="film-heading-user">Fast and Furious 10</h2>
-                            <p className={styles["film-details"]}>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin and
-                                Zach Dean.
-                            </p>
-                            <Link className="link-details" to="/">Details</Link>
-                        </article>
-                    </li>
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <h2 className="film-heading-user">Fast and Furious 10</h2>
-                            <p className={styles["film-details"]}>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin and
-                                Zach Dean.
-                            </p>
-                            <Link className="link-details" to="/">Details</Link>
-                        </article>
-                    </li>
-
-                    <li>
-                        <article className="film">
-                            <img className="film-img" src={fastX} alt="fast-x" />
-                            <h2 className="film-heading-user">Fast and Furious 10</h2>
-                            <p className={styles["film-details"]}>
-                                Fast X (also known as Fast &amp; Furious 10) is an upcoming American
-                                action film directed by Louis Leterrier and written by Justin Lin and
-                                Zach Dean.
-                            </p>
-                            <Link className="link-details" to="/">Details</Link>
-                        </article>
-                    </li>
+                <h3 className={styles["headings-shared"]}>There are no shared publications.</h3>    
                 </ul>
             </article>
         </section>
