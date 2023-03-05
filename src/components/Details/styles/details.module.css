@@ -31,7 +31,9 @@
     height: 400px;
 }
 
-.btn-details {
+.btn-details-edit,
+.btn-details-delete,
+.btn-details-save {
     border: 1px solid black;
     padding: 5px 20px;
     background-color: grey;
@@ -39,12 +41,17 @@
     color: black;
     font-weight: 600;
     text-align: center;
-    margin-right: 5px;
+    margin-right: 10px;
     margin-top: 20px;
+    margin-left: 20px;
 }
 
-.btn-details:nth-of-type(1) {
-    margin-left: 180px;
+.btn-details-save {
+    margin-left: 280px;
+}
+
+.btn-details-edit {
+    margin-left: 210px;
 }
 
 .btn-details:hover {
