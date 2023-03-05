@@ -24,7 +24,7 @@ const Header = () => {
                     ?
                     <>
                         <li className={styles["nav-item"]}>
-                            <Link to="/profile">Profile</Link>
+                            <Link to={`/profile/${user._id}`}>Profile</Link>
                         </li>
                         <li className={styles["nav-item"]}>
                             <Link to="/create">Create</Link>

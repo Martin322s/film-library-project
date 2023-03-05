@@ -3,16 +3,18 @@ import { AuthContext } from "../../contexts/AuthContext";
 import styles from "./styles/profile.module.css";
 import * as service from "../../services/filmService";
 import ProfileFilmItem from "./ProfileFilmItem";
+import { useParams } from "react-router-dom";
 
 const Profile = () => {
     const { user } = useContext(AuthContext);
+    const { id } = useParams();
     const [films, setFilms] = useState([]);
 
     useEffect(() => {
-        service.getAll()
+        service.getMyPublications(id)
             .then(result => {
                 setFilms(result);
-            })
+            });
     }, []);
 
     return (
