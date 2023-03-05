@@ -11,8 +11,10 @@ const Create = () => {
     const _ownerId = user._id;
     const [data, setData] = useState({
         title: "",
+        year: "",
         category: "",
         imageUrl: "",
+        trailerUrl: "",
         content: ""
     });
 
@@ -31,7 +33,7 @@ const Create = () => {
         } else {
             try {
                 service.createFilm({ ...filmData, _ownerId }, token)
-                    .then(result => {
+                    .then(() => {
                         navigate("/catalog", { replace: true });
                     });
             } catch (err) {
@@ -67,6 +69,15 @@ const Create = () => {
                         onChange={(ev) => changeHandler(ev)}
                         required
                     />
+                    <label htmlFor="year">Year:</label>
+                    <input 
+                        type="number" 
+                        name="year" 
+                        id="year" 
+                        value={data.year}
+                        onChange={(ev) => changeHandler(ev)}
+                        required
+                    />
                     <label htmlFor="category">Category:</label>
                     <input 
                         type="text" 
@@ -85,7 +96,16 @@ const Create = () => {
                         onChange={(ev) => changeHandler(ev)}
                         required
                     />
-                    <label htmlFor="content">content:</label>
+                    <label htmlFor="trailerUrl">Trailer URL:</label>
+                    <input 
+                        type="url" 
+                        name="trailerUrl"  
+                        id="trailerUrl"  
+                        value={data.trailerUrl}
+                        onChange={(ev) => changeHandler(ev)}
+                        required
+                    />
+                    <label htmlFor="content">Content:</label>
                     <textarea 
                         col="2000" 
                         rows="5"

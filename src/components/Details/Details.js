@@ -1,7 +1,7 @@
 import styles from "./styles/details.module.css";
 import * as service from "../../services/filmService";
 import { AuthContext } from "../../contexts/AuthContext";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 
 const Details = () => {
@@ -9,6 +9,8 @@ const Details = () => {
     const { user } = useContext(AuthContext);
     const [film, setFilm] = useState({});
 
+    console.log(film);
+    
     useEffect(() => {
         service.getOne(publicationId)
             .then(result => {
@@ -20,7 +22,7 @@ const Details = () => {
         <section className={styles["details"]}>
             <img className={styles["img-details"]} src={film.imageUrl} alt={film.title} />
             <article>
-                <h1 className={styles["details-heading"]}>{film.title}</h1>
+                <h1 className={styles["details-heading"]}>{film.title} ({film.year})</h1>
                 <p className={styles["details-category"]}>{film.category}</p>
                 <p className={styles["details-content"]}>
                     {film.content}
@@ -34,10 +36,19 @@ const Details = () => {
                                 <button className={styles["btn-details-edit"]}>Edit</button>
                                 <button className={styles["btn-details-delete"]}>Delete</button>
                             </>
-                            :   <button className={styles["btn-details-save"]}>Save</button>
+                            :   
+                            <>
+                                <button className={styles["btn-details-save"]}>Save</button>
+                                <Link 
+                                    className={styles["trailer"]} 
+                                    to={film.trailerUrl}
+                                    target="_blank"
+                                >
+                                    Watch Trailer
+                                </Link>
+                            </>
+
                         }
-                        {/* <button className={styles["btn-details"]}>Edit</button>
-                        <button className={styles["btn-details"]}>Delete</button> */}
                     </>
                     : null
                 }

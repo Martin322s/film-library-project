@@ -47,7 +47,7 @@
 }
 
 .btn-details-save {
-    margin-left: 280px;
+    margin-left: 200px;
 }
 
 .btn-details-edit {
@@ -57,3 +57,24 @@
 .btn-details:hover {
     color: gold;
 }
+
+.trailer {
+    border: 1px solid black;
+    padding: 5px 20px;
+    background-color: grey;
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+}
+
+.trailer:hover {
+    color: gold;
+}
+
+.btn-details-edit:hover,
+.btn-details-delete:hover,
+.btn-details-save:hover  {
+    color: gold;
+} 

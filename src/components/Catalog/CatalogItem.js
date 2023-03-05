@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const CatalogItem = ({
     _id,
     title,
+    year,
     imageUrl
 }) => {
     return (
