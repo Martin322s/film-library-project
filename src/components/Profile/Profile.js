@@ -15,7 +15,7 @@ const Profile = () => {
             .then(result => {
                 setFilms(result);
             });
-    }, []);
+    }, [id]);
 
     return (
         <section>
@@ -23,6 +23,7 @@ const Profile = () => {
             <h1 className={styles["welcome-user-email"]}>Email: {user.email}</h1>
 
             <article className={styles["user-publications"]}>
+                {/* eslint-disable-next-line */}
                 <ul className={styles["created-publications"]} role={"list"}>
                 <h3 className={styles["headings"]}>Created publications:</h3>
                     {films.length > 0
@@ -36,6 +37,7 @@ const Profile = () => {
                         <h3 className={styles["headings-created"]}>There are no created publications.</h3>
                     }
                 </ul>
+                {/* eslint-disable-next-line */}
                 <ul className={styles["shared-publications"]} role={"list"}>
                 <h3 className={styles["headings"]}>Shared publications:</h3>
                 <h3 className={styles["headings-shared"]}>There are no shared publications.</h3>    
