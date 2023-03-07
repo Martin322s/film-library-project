@@ -1,49 +1,20 @@
 import styles from "./styles/details.module.css";
 import * as service from "../../services/filmService";
 import { AuthContext } from "../../contexts/AuthContext";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 
 const Details = () => {
     const { publicationId } = useParams();
-    const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const [film, setFilm] = useState({});
-    const [saves, setSaves] = useState({
-        count: 0,
-        clicked: false
-    });
-    const userId = user._id;
-    const accessToken = user.accessToken;
-
+ 
     useEffect(() => {
         service.getOne(publicationId)
             .then(result => {
                 setFilm(result);
             });
     }, [publicationId]);
-
-    useEffect(() => {
-        service.getSaves(userId)
-            .then(result => {
-                setSaves(state => ({
-                    ...state,
-                    count: result
-                }));
-            });
-    }, [userId]);
-
-    const saveHandler = () => {
-        service.saveFilm(publicationId, userId, accessToken)
-            .then((result) => {
-                navigate(`/details/${publicationId}`);
-                setSaves(state => ({
-                    ...state,
-                    count: result,
-                    clicked: true
-                }));
-            });
-    };
 
     return (
         <section className={styles["details"]}>
@@ -54,7 +25,6 @@ const Details = () => {
                 <p className={styles["details-content"]}>
                     {film.content}
                 </p>
-                <p className={styles["details-saves"]}>Saves: {saves.count}</p>
                 {user.accessToken
                     ?
                     <>
@@ -68,8 +38,6 @@ const Details = () => {
                             <>
                                 <button
                                     className={styles["btn-details-save"]}
-                                    onClick={() => saveHandler()}
-                                    disabled={saves.clicked ? true : false}
                                 >
                                     Save
                                 </button>

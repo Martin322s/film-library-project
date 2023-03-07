@@ -77,11 +77,4 @@
 .btn-details-delete:hover,
 .btn-details-save:hover  {
     color: gold;
-    cursor: pointer;
 } 
-
-.btn-details-save:disabled {
-    opacity: 0.3;
-    color: black;
-    cursor: auto;
-}
