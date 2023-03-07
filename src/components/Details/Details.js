@@ -8,7 +8,7 @@ const Details = () => {
     const { publicationId } = useParams();
     const { user } = useContext(AuthContext);
     const [film, setFilm] = useState({});
- 
+
     useEffect(() => {
         service.getOne(publicationId)
             .then(result => {
