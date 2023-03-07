@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const ProfileFilmItem = ({
+    _id,
     title,
     imageUrl
 }) => {
@@ -8,7 +9,7 @@ const ProfileFilmItem = ({
         <article className="film">
             <img className="film-img" src={imageUrl} alt={title} />
             <h2 className="film-heading-user">{title}</h2>
-            <Link className="link-details" to="/">Details</Link>
+            <Link className="link-details" to={`/details/${_id}`}>Details</Link>
         </article>
     );
 }
