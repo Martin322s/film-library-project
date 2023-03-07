@@ -78,3 +78,7 @@
 .btn-details-save:hover  {
     color: gold;
 } 
+
+.btn-details-save:disabled {
+    color: lightgray;
+}
