@@ -77,8 +77,11 @@
 .btn-details-delete:hover,
 .btn-details-save:hover  {
     color: gold;
+    cursor: pointer;
 } 
 
 .btn-details-save:disabled {
-    color: lightgray;
+    opacity: 0.3;
+    color: black;
+    cursor: auto;
 }

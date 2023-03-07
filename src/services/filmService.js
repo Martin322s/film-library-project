@@ -26,3 +26,5 @@ export const saveFilm = (publicId, userId, accessToken) => {
     })
         .then(res => res.json());
 }
+
+export const getSaves = (userId) => fetch(`${baseUrl}/saves/${userId}`).then(res => res.json());

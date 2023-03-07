@@ -24,13 +24,24 @@ const Details = () => {
     }, [publicationId]);
 
     useEffect(() => {
-        
-    }, []);
+        service.getSaves(userId)
+            .then(result => {
+                setSaves(state => ({
+                    ...state,
+                    count: result
+                }));
+            });
+    }, [userId]);
 
     const saveHandler = () => {
         service.saveFilm(publicationId, userId, accessToken)
-            .then(() => {
+            .then((result) => {
                 navigate(`/details/${publicationId}`);
+                setSaves(state => ({
+                    ...state,
+                    count: result,
+                    clicked: true
+                }));
             });
     };
 
@@ -53,17 +64,17 @@ const Details = () => {
                                 <button className={styles["btn-details-edit"]}>Edit</button>
                                 <button className={styles["btn-details-delete"]}>Delete</button>
                             </>
-                            :   
+                            :
                             <>
-                                <button 
-                                    className={styles["btn-details-save"]} 
+                                <button
+                                    className={styles["btn-details-save"]}
                                     onClick={() => saveHandler()}
                                     disabled={saves.clicked ? true : false}
                                 >
                                     Save
                                 </button>
-                                <Link 
-                                    className={styles["trailer"]} 
+                                <Link
+                                    className={styles["trailer"]}
                                     to={film.trailerUrl}
                                     target="_blank"
                                 >
