@@ -8,15 +8,22 @@ const Details = () => {
     const { publicationId } = useParams();
     const { user } = useContext(AuthContext);
     const [film, setFilm] = useState({});
+    const userId = user._id;
+    const accessToken = user.accessToken;
 
-    console.log(film);
-    
     useEffect(() => {
         service.getOne(publicationId)
             .then(result => {
                 setFilm(result);
             });
     }, [publicationId]);
+
+    const saveHandler = () => {
+        service.saveFilm(publicationId, userId, accessToken)
+            .then(result => {
+                console.log(result);
+            });
+    };
 
     return (
         <section className={styles["details"]}>
@@ -38,7 +45,12 @@ const Details = () => {
                             </>
                             :   
                             <>
-                                <button className={styles["btn-details-save"]}>Save</button>
+                                <button 
+                                    className={styles["btn-details-save"]} 
+                                    onClick={() => saveHandler()}
+                                >
+                                    Save
+                                </button>
                                 <Link 
                                     className={styles["trailer"]} 
                                     to={film.trailerUrl}
