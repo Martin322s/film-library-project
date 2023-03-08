@@ -66,7 +66,7 @@ const Edit = () => {
                     className={styles["create"]}
                     onSubmit={(ev) => editHandler(ev, data, token)}
                 >
-                    <h1>Create publication</h1>
+                    <h1>Edit publication</h1>
                     <label htmlFor="title">Title:</label>
                     <input
                         type="text"
