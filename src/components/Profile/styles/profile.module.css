@@ -49,6 +49,10 @@ ul > li p.film-details {
     text-align: left;
 }
 
+h2.film-heading-user {
+    color: white;
+}
+
 ul.shared-publications li img,
 ul.created-publications li img {
     height: 220px;
@@ -61,6 +65,11 @@ ul.created-publications li img {
 }
 
 ul.created-publications li, 
+ul.shared-publications li {
+    margin-bottom: 30px;
+}
+
+ul.created-publications li , 
 ul.shared-publications li {
     margin-bottom: 30px;
 }

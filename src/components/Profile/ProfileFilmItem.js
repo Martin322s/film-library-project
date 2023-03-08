@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./styles/profile.module.css";
 
 const ProfileFilmItem = ({
     _id,
