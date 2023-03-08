@@ -42,6 +42,7 @@ main {
     height: 400px;
     border: 2px solid black;
     padding: 10px;
+    background-color: rgb(100, 99, 99);
 }
 
 .film p {
@@ -80,4 +81,5 @@ a.link:hover {
 
 .home-img-heading {
     width: 220px;
+    color: white;
 }
