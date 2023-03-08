@@ -23,7 +23,7 @@ const Edit = () => {
             .then(result => {
                 setData(result);
             });
-    }, []);
+    }, [publicId]);
 
     const changeHandler = (ev) => {
         setData(state => ({
@@ -39,10 +39,9 @@ const Edit = () => {
             alert("Please enter a valid URL address");
         } else {
             try {
-                console.log(data);
                 service.editPublication(publicId, accessToken, filmData)
                     .then(() => {
-                        navigate(`/details/${publicId}`);
+                        navigate(`/details/${publicId}`, { replace: true });
                     });
             } catch (err) {
                 alert(err);
@@ -65,7 +64,7 @@ const Edit = () => {
             <section className={styles["content"]}>
                 <form
                     className={styles["create"]}
-                    onSubmit={(ev) => editHandler(ev, token, data)}
+                    onSubmit={(ev) => editHandler(ev, data, token)}
                 >
                     <h1>Create publication</h1>
                     <label htmlFor="title">Title:</label>
