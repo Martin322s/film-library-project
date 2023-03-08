@@ -5,6 +5,7 @@ import Header from "./components/Common/Header/Header";
 import Create from "./components/Create/Create";
 import Delete from "./components/Delete/Delete";
 import Details from "./components/Details/Details";
+import Edit from "./components/Edit/Edit";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
@@ -27,6 +28,7 @@ function App() {
                     <Route path="/logout" element={<Logout />} />
                     <Route path="/details/:publicationId" element={<Details />} />
                     <Route path="/delete/:publicId" element={<Delete />} />
+                    <Route path="/edit/:publicId" element={<Edit />} />
                 </Routes>
                 <Footer />
             </AuthProvider>

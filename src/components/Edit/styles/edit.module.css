@@ -1,0 +1,78 @@
+main {
+    display: flex;
+}
+
+.create {
+    border: 1px solid black;
+    position: relative;
+    top: 10%;
+    left: 40%;
+    padding: 30px;
+    margin-bottom: 120px;
+    margin-left: -90px;
+    background-color: rgb(240, 203, 156);
+}
+
+.create textarea {
+    width: 350px;
+}
+
+.create h1 {
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 4px solid black;
+}
+
+.create label {
+    display: block;
+    margin-top: 10px;
+}
+
+.create input {
+    display: block;
+    margin-bottom: 15px;
+    width: 350px;
+    border: none;
+    border-bottom: 3px solid black;
+}
+
+.create input:focus {
+    outline: none;
+    border-bottom: 3px solid black;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover {
+    color: red;
+}
+
+.create .btn {
+    border-radius: 25px;
+    padding: 8px 15px;
+    vertical-align: middle;
+    font-size: 20px;
+    background-color: rgb(190, 190, 190);
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: black;
+    color: gold;
+}
+
+ul.categories {
+    margin-left: 25px;
+    margin-right: 340px;
+    font-size: 20px;
+}
+
+.categories li:nth-of-type(4) {
+    list-style-type: none;
+}

@@ -31,13 +31,20 @@ const Details = () => {
                         {film._ownerId === user._id
                             ?
                             <>
-                                <button className={styles["btn-details-edit"]}>Edit</button>
+                                <Link 
+                                    className={styles["btn-details-edit"]}
+                                    to={`/edit/${publicationId}`}
+                                >
+                                    Edit
+                                </Link>
+
                                 <Link 
                                     className={styles["btn-details-delete"]}
                                     to={`/delete/${publicationId}`}
                                 >
                                     Delete
                                 </Link>
+                                
                             </>
                             :
                             <>
