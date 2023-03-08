@@ -24,4 +24,16 @@ export const deletePublication = (publicId, accessToken) => {
         }
     })
         .then(res => res.json());
-}
+};
+
+export const editPublication = (publicId, accessToken, data) => {
+    return fetch(`${baseUrl}/edit/${publicId}`, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Authorization': accessToken
+        },
+        body: JSON.stringify(data)
+    })
+        .then(res => res.json());
+};

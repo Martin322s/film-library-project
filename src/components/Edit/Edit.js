@@ -9,12 +9,21 @@ const Edit = () => {
     const { publicId } = useParams();
     const navigate = useNavigate();
     const token = user.accessToken;
-    const _ownerId = user._id;
-    const [data, setData] = useState({});
+    const [data, setData] = useState({
+        title: "",
+        year: "",
+        category: "",
+        imageUrl: "",
+        trailerUrl: "",
+        content: ""
+    });
 
     useEffect(() => {
-        service.getOne()
-    })
+        service.getOne(publicId)
+            .then(result => {
+                setData(result);
+            });
+    }, []);
 
     const changeHandler = (ev) => {
         setData(state => ({
@@ -23,16 +32,17 @@ const Edit = () => {
         }));
     };
 
-    const createHandler = (ev, filmData) => {
+    const editHandler = (ev, filmData, accessToken) => {
         ev.preventDefault();
-        
+
         if (!filmData.imageUrl.startsWith("https://")) {
             alert("Please enter a valid URL address");
         } else {
             try {
-                service.createFilm({ ...filmData, _ownerId }, token)
+                console.log(data);
+                service.editPublication(publicId, accessToken, filmData)
                     .then(() => {
-                        navigate("/catalog", { replace: true });
+                        navigate(`/details/${publicId}`);
                     });
             } catch (err) {
                 alert(err);
@@ -53,59 +63,59 @@ const Edit = () => {
                 </ul>
             </aside>
             <section className={styles["content"]}>
-                <form 
+                <form
                     className={styles["create"]}
-                    onSubmit={(ev) => createHandler(ev, data)}
+                    onSubmit={(ev) => editHandler(ev, token, data)}
                 >
                     <h1>Create publication</h1>
                     <label htmlFor="title">Title:</label>
-                    <input 
-                        type="text" 
-                        name="title" 
-                        id="title" 
+                    <input
+                        type="text"
+                        name="title"
+                        id="title"
                         value={data.title}
                         onChange={(ev) => changeHandler(ev)}
                         required
                     />
                     <label htmlFor="year">Year:</label>
-                    <input 
-                        type="number" 
-                        name="year" 
-                        id="year" 
+                    <input
+                        type="number"
+                        name="year"
+                        id="year"
                         value={data.year}
                         onChange={(ev) => changeHandler(ev)}
                         required
                     />
                     <label htmlFor="category">Category:</label>
-                    <input 
-                        type="text" 
-                        name="category" 
-                        id="category" 
+                    <input
+                        type="text"
+                        name="category"
+                        id="category"
                         value={data.category}
                         onChange={(ev) => changeHandler(ev)}
                         required
                     />
                     <label htmlFor="imageUrl">Image URL:</label>
-                    <input 
-                        type="url" 
-                        name="imageUrl" 
-                        id="imageUrl" 
+                    <input
+                        type="url"
+                        name="imageUrl"
+                        id="imageUrl"
                         value={data.imageUrl}
                         onChange={(ev) => changeHandler(ev)}
                         required
                     />
                     <label htmlFor="trailerUrl">Trailer URL:</label>
-                    <input 
-                        type="url" 
-                        name="trailerUrl"  
-                        id="trailerUrl"  
+                    <input
+                        type="url"
+                        name="trailerUrl"
+                        id="trailerUrl"
                         value={data.trailerUrl}
                         onChange={(ev) => changeHandler(ev)}
                         required
                     />
                     <label htmlFor="content">Content:</label>
-                    <textarea 
-                        col="2000" 
+                    <textarea
+                        col="2000"
                         rows="5"
                         name="content"
                         value={data.content}
@@ -113,7 +123,7 @@ const Edit = () => {
                         required
                     ></textarea>
                     <div>
-                        <button className={styles["btn"]}>Create</button>
+                        <button className={styles["btn"]}>Edit Film</button>
                     </div>
                 </form>
             </section>
