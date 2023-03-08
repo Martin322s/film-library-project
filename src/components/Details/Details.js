@@ -32,7 +32,12 @@ const Details = () => {
                             ?
                             <>
                                 <button className={styles["btn-details-edit"]}>Edit</button>
-                                <button className={styles["btn-details-delete"]}>Delete</button>
+                                <Link 
+                                    className={styles["btn-details-delete"]}
+                                    to={`/delete/${publicationId}`}
+                                >
+                                    Delete
+                                </Link>
                             </>
                             :
                             <>

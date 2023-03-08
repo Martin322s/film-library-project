@@ -3,6 +3,7 @@ import Catalog from "./components/Catalog/Catalog";
 import Footer from "./components/Common/Footer/Footer";
 import Header from "./components/Common/Header/Header";
 import Create from "./components/Create/Create";
+import Delete from "./components/Delete/Delete";
 import Details from "./components/Details/Details";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/profile/:id" element={<Profile />} />
                     <Route path="/logout" element={<Logout />} />
                     <Route path="/details/:publicationId" element={<Details />} />
+                    <Route path="/delete/:publicId" element={<Delete />} />
                 </Routes>
                 <Footer />
             </AuthProvider>

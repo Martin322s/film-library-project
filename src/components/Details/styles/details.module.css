@@ -77,4 +77,5 @@
 .btn-details-delete:hover,
 .btn-details-save:hover  {
     color: gold;
+    cursor: pointer;
 } 
