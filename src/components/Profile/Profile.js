@@ -39,8 +39,8 @@ const Profile = () => {
                 </ul>
                 {/* eslint-disable-next-line */}
                 <ul className={styles["shared-publications"]} role={"list"}>
-                <h3 className={styles["headings"]}>Shared publications:</h3>
-                <h3 className={styles["headings-shared"]}>There are no shared publications.</h3>    
+                <h3 className={styles["headings"]}>Saved publications:</h3>
+                <h3 className={styles["headings-shared"]}>There are no saved publications.</h3>    
                 </ul>
             </article>
         </section>

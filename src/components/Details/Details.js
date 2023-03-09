@@ -8,6 +8,8 @@ const Details = () => {
     const { publicationId } = useParams();
     const { user } = useContext(AuthContext);
     const [film, setFilm] = useState({});
+    const userId = user._id;
+    const token = user.accessToken;
 
     useEffect(() => {
         service.getOne(publicationId)
@@ -15,6 +17,10 @@ const Details = () => {
                 setFilm(result);
             });
     }, [publicationId]);
+
+    const saveHandler = () => {
+        console.log(userId, publicationId, token);
+    };
 
     return (
         <section className={styles["details"]}>
@@ -50,6 +56,7 @@ const Details = () => {
                             <>
                                 <button
                                     className={styles["btn-details-save"]}
+                                    onClick={() => saveHandler()}
                                 >
                                     Save
                                 </button>
