@@ -34,7 +34,7 @@ const Profile = () => {
             <article className={styles["user-publications"]}>
                 {/* eslint-disable-next-line */}
                 <ul className={styles["created-publications"]} role={"list"}>
-                    <h3 className={styles["headings"]}>Created publications:</h3>
+                    <h3 className={styles["headings"]}>Created publications: {films.length}</h3>
                     {films.length > 0
                         ?
                         films.map(film => (
@@ -48,7 +48,7 @@ const Profile = () => {
                 </ul>
                 {/* eslint-disable-next-line */}
                 <ul className={styles["shared-publications"]} role={"list"}>
-                    <h3 className={styles["headings"]}>Saved publications:</h3>
+                    <h3 className={styles["headings"]}>Saved publications: {savedFilms.length}</h3>
                     {savedFilms.length > 0
                         ? savedFilms.map(film => (
                             <li key={film._id}>
