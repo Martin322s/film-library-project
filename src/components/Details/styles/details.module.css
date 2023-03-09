@@ -80,3 +80,9 @@
     color: gold;
     cursor: pointer;
 } 
+
+.btn-details-save:disabled {
+    opacity: 0.3;
+    cursor: auto;
+    color: black;
+}

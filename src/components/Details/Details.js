@@ -1,13 +1,15 @@
 import styles from "./styles/details.module.css";
 import * as service from "../../services/filmService";
 import { AuthContext } from "../../contexts/AuthContext";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 
 const Details = () => {
     const { publicationId } = useParams();
+    const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const [film, setFilm] = useState({});
+    const [savedFilms, setSavedFilms] = useState([]);
     const userId = user._id;
     const token = user.accessToken;
 
@@ -18,8 +20,21 @@ const Details = () => {
             });
     }, [publicationId]);
 
+    useEffect(() => {
+        service.getSavedFilms(userId, token)
+            .then(result => {
+                setSavedFilms(result);
+            });
+    }, [token, userId]);
+
     const saveHandler = () => {
-        console.log(userId, publicationId, token);
+        service.saveFilm(publicationId, userId, token)
+            .then(() => {
+                service.getSavedFilms(userId, token)
+                    .then(result => {
+                        setSavedFilms(result);
+                    });
+            })
     };
 
     return (
@@ -37,26 +52,27 @@ const Details = () => {
                         {film._ownerId === user._id
                             ?
                             <>
-                                <Link 
+                                <Link
                                     className={styles["btn-details-edit"]}
                                     to={`/edit/${publicationId}`}
                                 >
                                     Edit
                                 </Link>
 
-                                <Link 
+                                <Link
                                     className={styles["btn-details-delete"]}
                                     to={`/delete/${publicationId}`}
                                 >
                                     Delete
                                 </Link>
-                                
+
                             </>
                             :
                             <>
                                 <button
                                     className={styles["btn-details-save"]}
                                     onClick={() => saveHandler()}
+                                    disabled={savedFilms.includes(publicationId) ? true : false}
                                 >
                                     Save
                                 </button>

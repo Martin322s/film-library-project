@@ -17,6 +17,10 @@ const Profile = () => {
             });
     }, [id]);
 
+    useEffect(() => {
+        service.getSavedFilms(user._Id, user.accessToken)
+    }, []);
+
     return (
         <section>
             <h1 className={styles["welcome-user"]}>Full Name: {`${user.firstName} ${user.lastName}`}</h1>

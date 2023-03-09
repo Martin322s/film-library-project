@@ -37,3 +37,25 @@ export const editPublication = (publicId, accessToken, data) => {
     })
         .then(res => res.json());
 };
+
+export const saveFilm = (publicId, userId, token) => {
+    return fetch(`${baseUrl}/save/${publicId}`, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Authorization': token
+        },
+        body: JSON.stringify({ userId })
+    })
+        .then(res => res.json());
+};
+
+export const getSavedFilms = (userId, token) => {
+    return fetch(`${baseUrl}/save/${userId}`, {
+        method: 'GET',
+        headers: {
+            'X-Authorization': token
+        }
+    })
+        .then(res => res.json());
+}
