@@ -9,6 +9,7 @@ import Edit from "./components/Edit/Edit";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
+import NotFound from "./components/Not Found/NotFound";
 import Profile from "./components/Profile/Profile";
 import Register from "./components/Register/Register";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -29,6 +30,7 @@ function App() {
                     <Route path="/details/:publicationId" element={<Details />} />
                     <Route path="/delete/:publicId" element={<Delete />} />
                     <Route path="/edit/:publicId" element={<Edit />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />
             </AuthProvider>

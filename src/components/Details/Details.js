@@ -45,6 +45,16 @@ const Details = () => {
                 <p className={styles["details-content"]}>
                     {film.content}
                 </p>
+                {savedFilms.filter(x => x._id === publicationId)[0]?._id === publicationId
+                    ? 
+                    <p 
+                        className={styles["details-content"]}
+                    >
+                        This film is added to your watchlist. Check it out <Link to={`/profile/${userId}`}>here</Link>.
+                    </p>
+                    : null
+                }
+                
                 {user.accessToken
                     ?
                     <>
