@@ -1,12 +1,11 @@
 import styles from "./styles/details.module.css";
 import * as service from "../../services/filmService";
 import { AuthContext } from "../../contexts/AuthContext";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 
 const Details = () => {
     const { publicationId } = useParams();
-    const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const [film, setFilm] = useState({});
     const [savedFilms, setSavedFilms] = useState([]);
@@ -34,7 +33,7 @@ const Details = () => {
                     .then(result => {
                         setSavedFilms(result);
                     });
-            })
+            });
     };
 
     return (
@@ -72,7 +71,11 @@ const Details = () => {
                                 <button
                                     className={styles["btn-details-save"]}
                                     onClick={() => saveHandler()}
-                                    disabled={savedFilms.includes(publicationId) ? true : false}
+                                    disabled={
+                                        savedFilms.filter(x => x._id === publicationId)[0]?._id === publicationId
+                                            ? true
+                                            : false
+                                    }
                                 >
                                     Save
                                 </button>

@@ -9,6 +9,7 @@ const Profile = () => {
     const { user } = useContext(AuthContext);
     const { id } = useParams();
     const [films, setFilms] = useState([]);
+    const [savedFilms, setSavedFilms] = useState([]);
 
     useEffect(() => {
         service.getMyPublications(id)
@@ -18,8 +19,12 @@ const Profile = () => {
     }, [id]);
 
     useEffect(() => {
-        service.getSavedFilms(user._Id, user.accessToken)
-    }, []);
+        service.getSavedFilms(user._id, user.accessToken)
+            .then(result => {
+                setSavedFilms(result);
+            });
+    }, [user._id, user.accessToken]);
+
 
     return (
         <section>
@@ -29,7 +34,7 @@ const Profile = () => {
             <article className={styles["user-publications"]}>
                 {/* eslint-disable-next-line */}
                 <ul className={styles["created-publications"]} role={"list"}>
-                <h3 className={styles["headings"]}>Created publications:</h3>
+                    <h3 className={styles["headings"]}>Created publications:</h3>
                     {films.length > 0
                         ?
                         films.map(film => (
@@ -43,8 +48,15 @@ const Profile = () => {
                 </ul>
                 {/* eslint-disable-next-line */}
                 <ul className={styles["shared-publications"]} role={"list"}>
-                <h3 className={styles["headings"]}>Saved publications:</h3>
-                <h3 className={styles["headings-shared"]}>There are no saved publications.</h3>    
+                    <h3 className={styles["headings"]}>Saved publications:</h3>
+                    {savedFilms.length > 0
+                        ? savedFilms.map(film => (
+                            <li key={film._id}>
+                                <ProfileFilmItem {...film} />
+                            </li>
+                        ))
+                        : <h3 className={styles["headings-shared"]}>There are no saved publications.</h3>
+                    }
                 </ul>
             </article>
         </section>
