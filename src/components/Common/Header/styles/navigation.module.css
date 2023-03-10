@@ -62,10 +62,9 @@
     padding: 20px;
 }
 
-.header_heading i.fas.fa-film {
-    margin-right: 20px;
-    margin-left: 20px;
-    font-size: 60px;
+.header_heading i {
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .btn-search i {
