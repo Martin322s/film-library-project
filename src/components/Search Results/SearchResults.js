@@ -55,6 +55,7 @@ const SearchResults = () => {
                 {/* eslint-disable-next-line */}
                 {films.searched.length > 0
                     ?
+                    // eslint-disable-next-line
                     <ul className="movies-list" role={"list"}>
                         {films.searched.map(film => 
                             <li key={film._id}>
