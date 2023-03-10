@@ -3,6 +3,7 @@ import styles from "./styles/navigation.module.css";
 import logo from "./images/logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
+import Search from "../../Search/Search";
 
 const Header = () => {
     const { user } = useContext(AuthContext);
@@ -43,10 +44,7 @@ const Header = () => {
                         </li>
                     </>
                 }
-                <li className={styles["nav-item-search"]}>
-                    <input type="text" placeholder="Search" />
-                    <button className={styles["btn-search"]}>Search</button>
-                </li>
+                <Search />
             </ul>
             <h1 className={styles["header_heading"]}>
                 <i className="fas fa-film" />

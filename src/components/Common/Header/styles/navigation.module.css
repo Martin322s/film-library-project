@@ -35,13 +35,8 @@
     height: 40px;
     margin-right: 10px;
     position: absolute;
-    right: 150px;
+    right: 180px;
     top: 30px;
-}
-
-i.search {
-    position: relative;
-    left: -30px;
 }
 
 .btn-search {
@@ -69,4 +64,10 @@ i.search {
     margin-right: 20px;
     margin-left: 20px;
     font-size: 60px;
+}
+
+.btn-search i {
+    margin-right: 30px;
+    margin-left: -15px;
+    font-size: 18px;
 }
