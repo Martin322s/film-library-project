@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import * as service from "../../services/filmService";
+import ResultItem from "./ResultItem";
 import "../Catalog/styles/catalog.css";
 
 const SearchResults = () => {
@@ -11,7 +12,7 @@ const SearchResults = () => {
     });
     const search = criteria.toLocaleLowerCase();
 
-    console.log(films.all);
+    films.searched = films.all.filter(film => film.title.toLowerCase().includes(search));
 
     useEffect(() => {
         service.getAll()
@@ -52,8 +53,19 @@ const SearchResults = () => {
             <section className="catalog">
 
                 {/* eslint-disable-next-line */}
-                <ul className="movies-list" role={"list"}></ul>
-                <h1 className="not-found">Sorry, nothing was found!</h1>
+                {films.searched.length > 0
+                    ?
+                    <ul className="movies-list" role={"list"}>
+                        {films.searched.map(film => 
+                            <li key={film._id}>
+                                <ResultItem {...film} />
+                            </li>
+                            )
+                        }
+                    </ul>
+                    :
+                    <h1 className="not-found">Sorry, nothing was found!</h1>
+                }
             </section>
         </main>
     );

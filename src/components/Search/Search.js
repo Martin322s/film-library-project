@@ -13,7 +13,7 @@ const Search = () => {
         <li className={styles["nav-item-search"]}>
             <input
                 type="text"
-                placeholder="Search"
+                placeholder="Search by title..."
                 value={criteria}
                 onChange={(ev) => chnageHandler(ev)}
             />
