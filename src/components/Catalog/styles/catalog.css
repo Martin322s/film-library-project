@@ -48,6 +48,7 @@ ul.catalog-categories[role='list'] {
     background-color: rgb(181, 179, 180);
     padding: 10px;
     list-style-type: none;
+    margin-bottom: 40px;
 }
 
 .empty-catalog {
@@ -72,4 +73,11 @@ ul.catalog-categories[role='list'] {
 
 .link-details:hover {
     color: gold;
+}
+
+.not-found {
+    font-size: 40px;
+    text-align: center;
+    margin-left: 410px;
+    margin-top: -40px;
 }

@@ -40,12 +40,14 @@
 }
 
 .btn-search {
-    padding: 3px 25px;
+    padding: 4px 25px;
     font-size: 20px;
     cursor: pointer;
     position: absolute;
     right: 40px;
     top: 30px;
+    background-color: rgb(225, 225, 225);
+    color: black;
 }
 
 .btn-search:hover {
