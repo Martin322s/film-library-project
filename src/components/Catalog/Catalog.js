@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import * as service from "../../services/filmService";
 import CatalogItem from "./CatalogItem";
 import "./styles/catalog.css";
@@ -57,6 +58,13 @@ const Catalog = () => {
                         <h1 className="empty-catalog">There are no publications yet.</h1>
                     }
                 </ul>
+                <div className="pagination">
+                    <Link to="#">«</Link>
+                    <Link to="#">1</Link>
+                    <Link to="#">2</Link>
+                    <Link to="#">3</Link>
+                    <Link to="#">»</Link>
+                </div>
             </section>
         </main>
     );
