@@ -14,6 +14,8 @@ import Profile from "./components/Profile/Profile";
 import Register from "./components/Register/Register";
 import SearchResults from "./components/Search Results/SearchResults";
 import { AuthProvider } from "./contexts/AuthContext";
+import RouteGuard from "./guards/PrivateGuard";
+import PrivateRoute from "./guards/PrivateRoute";
 
 function App() {
     return (
@@ -22,17 +24,65 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/create" element={<Create />} />
                     <Route path="/catalog" element={<Catalog />} />
-                    <Route path="/profile/:id" element={<Profile />} />
-                    <Route path="/logout" element={<Logout />} />
-                    <Route path="/details/:publicationId" element={<Details />} />
-                    <Route path="/delete/:publicId" element={<Delete />} />
-                    <Route path="/edit/:publicId" element={<Edit />} />
                     <Route path="/search/:criteria" element={<SearchResults />} />
                     <Route path="*" element={<NotFound />} />
+
+                    <PrivateRoute>
+                        <Route
+                            path="/login"
+                            element={<Login />}
+                        />
+                    </PrivateRoute>
+
+                    <PrivateRoute>
+                        <Route
+                            path="/register"
+                            element={<Register />}
+                        />
+                    </PrivateRoute>
+
+                    <RouteGuard>
+                        <Route
+                            path="/create"
+                            element={<Create />}
+                        />
+                    </RouteGuard>
+
+                    <RouteGuard>
+                        <Route
+                            path="/profile/:id"
+                            element={<Profile />}
+                        />
+                    </RouteGuard>
+
+                    <RouteGuard>
+                        <Route
+                            path="/logout"
+                            element={<Logout />}
+                        />
+                    </RouteGuard>
+
+                    <RouteGuard>
+                        <Route
+                            path="/details/:publicationId"
+                            element={<Details />}
+                        />
+                    </RouteGuard>
+
+                    <RouteGuard>
+                        <Route
+                            path="/delete/:publicId"
+                            element={<Delete />}
+                        />
+                    </RouteGuard>
+
+                    <RouteGuard>
+                        <Route
+                            path="/edit/:publicId"
+                            element={<Edit />}
+                        />
+                    </RouteGuard>
                 </Routes>
                 <Footer />
             </AuthProvider>
