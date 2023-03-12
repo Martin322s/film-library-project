@@ -160,6 +160,7 @@ const Register = () => {
                         value={data.email}
                         onChange={(ev) => changeHandler(ev)}
                         onBlur={() =>
+                            // eslint-disable-next-line
                             validator("^[A-Za-z0-9_\.]+@[A-Za-z]+\.[A-Za-z]{2,3}$", data.email, "email")}
                     />
                     {error.email &&
