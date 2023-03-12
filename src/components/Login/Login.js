@@ -9,6 +9,7 @@ import people from "./images/people.webp";
 const Login = () => {
     const { userLogin } = useContext(AuthContext);
     const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(false);
     const [data, setData] = useState({
         email: "",
         password: ""
@@ -24,6 +25,7 @@ const Login = () => {
     const submitHandler = (ev, userData) => {
         ev.preventDefault();
 
+        setIsLoading(true);
         if (userData.email === "" || userData.password === "") {
             alert("Invalid data provided!");
         } else {
@@ -35,6 +37,7 @@ const Login = () => {
                             if (!result.message) {
                                 userLogin(result);
                                 navigate("/", { replace: true });
+                                setIsLoading(false);
                             } else {
                                 alert("Invalid email or password!");
                             }
@@ -86,7 +89,9 @@ const Login = () => {
                     <p>
                         You don't have an account? <Link to="/register" replace>Sign Up</Link>
                     </p>
-                    <button className={styles["btn"]}>Sign In</button>
+                    <button className={styles["btn"]}>
+                        {isLoading ? "Signing in..." : "Sign In"}
+                    </button>
                 </form>
             </section>
             <img className={styles["people"]} src={people} alt="people" />

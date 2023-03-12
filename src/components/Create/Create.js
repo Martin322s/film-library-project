@@ -27,7 +27,7 @@ const Create = () => {
 
     const createHandler = (ev, filmData) => {
         ev.preventDefault();
-        
+
         if (!filmData.imageUrl.startsWith("https://")) {
             alert("Please enter a valid URL address");
         } else {
