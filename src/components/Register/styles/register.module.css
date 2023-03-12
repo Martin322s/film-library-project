@@ -26,7 +26,7 @@ main {
 
 .register input {
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: -15px;
     width: 350px;
     border: none;
     border-bottom: 3px solid black;
@@ -84,10 +84,25 @@ fieldset ol li {
     font-size: 18px;
 }
 
+fieldset ol {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+fieldset {
+    padding-bottom: 30px;
+}
+
 .correct {
     color: rgb(33, 199, 33);
 }
 
 .wrong {
     color: rgb(255, 0, 0);
+}
+
+.register p.form-error {
+    color: red;
+    margin-top: 15px;
+    margin-bottom: 25px;
 }

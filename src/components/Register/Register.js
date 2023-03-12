@@ -15,6 +15,13 @@ const Register = () => {
         rePass: ""
     });
 
+    const [error, setError] = useState({
+        firstName: false,
+        lastName: false,
+        email: false,
+        rePass: false
+    });
+
     const changeHandler = (ev) => {
         setData(state => ({
             ...state,
@@ -54,6 +61,20 @@ const Register = () => {
         }
     };
 
+    const minLength = (length, text, type) => {
+        if (text.length < length) {
+            setError(state => ({
+                ...state,
+                [type]: true
+            }));
+        } else {
+            setError(state => ({
+                ...state,
+                [type]: false
+            }));
+        }
+    }
+
     // eslint-disable-next-line
     return (
         <main>
@@ -81,7 +102,11 @@ const Register = () => {
                         required
                         value={data.firstName}
                         onChange={(ev) => changeHandler(ev)}
+                        onBlur={() => minLength(3, data.firstName, "firstName")}
                     />
+                    {error.firstName &&
+                        <p className={styles["form-error"]}>First name should be at least 3 characters long!</p>
+                    }
 
                     <label htmlFor="lastName">Last Name:</label>
                     <input
@@ -92,6 +117,7 @@ const Register = () => {
                         value={data.lastName}
                         onChange={(ev) => changeHandler(ev)}
                     />
+                    <p className={styles["form-error"]}>Last name should be at least 3 characters long!</p>
 
                     <label htmlFor="email">Email:</label>
                     <input
@@ -102,11 +128,12 @@ const Register = () => {
                         value={data.email}
                         onChange={(ev) => changeHandler(ev)}
                     />
+                    <p className={styles["form-error"]}>Email is not valid!</p>
 
                     <fieldset id="password-field">
                         <legend>Password</legend>
                         <ol>
-                            <li 
+                            <li
                                 className={data.password.length >= 8 ? styles["correct"] : styles["wrong"]}
                             >
                                 At least 8 characters long
@@ -141,6 +168,7 @@ const Register = () => {
                         value={data.rePass}
                         onChange={(ev) => changeHandler(ev)}
                     />
+                    <p className={styles["form-error"]}>Passwords do not match!</p>
 
                     <p>
                         Aleready registered? <Link to="/login" replace>Sign In</Link>
