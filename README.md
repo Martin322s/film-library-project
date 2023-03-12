@@ -12,12 +12,12 @@ The application have following resources:
 - A package.json file, containing list of common dependencies.
 - Components for every endpoint of the application. 
 - To start the application, execute the command “npm install” via the command-line terminal.
+- Local REST Service: A special server, which contains sample data and support user registration and CRUD operations via REST requests is included with the project.
 
-Local REST Service: A special server, which contains sample data and support user registration and CRUD operations via REST requests is included with the project.
-Application Endpoints
-Navigation bar – links will correctly change the current page (view). Guests can see the links to the publications, sign in and sign up. The logged in user navbar will contain the links to the publications, the create page, profile page and logout action. Guest navigation example: User navigation example:
+## Application Endpoints
+- Navigation bar – links will correctly change the current page (view). Guests can see the links to the home, catalog, sign in and sign up pages. The logged in user navbar will contain the links to the home page, catalog, create page, profile page and logout action. 
 
-Sign in – contains a form for existing user authentication. By providing a email and password, the app will login user, if there are no empty fields. Login functionalty will send POST request to the correct endpoint with email and password with correct headers. Upon success, the REST service will return information about the existing user along with a property access token for the user. After successful login the user will be redirected to the home page. If there is empty fields, alert notification will be displayed.
+- Sign in – contains a form for existing user authentication. By providing a email and password, the app will login user, if there are no empty fields. Login functionalty will send POST request to the correct endpoint with email and password with correct headers. Upon success, the REST service will return information about the existing user along with a property access token for the user. After successful login the user will be redirected to the home page. If there are empty fields, alert notification will be displayed.
 
 Sign up – the page contains a form for new user registration. By providing a first anme, last name, email and password, the app will register a new user in the system, if there are no empty fields. Register functionalty will send POST request to the correct endpoint with names, email and password with correct headers. Upon success, the REST service will return information about the existing user along with a property access token for the user. After successful register the user will be redirected to the home page with requiring login. If there is empty fields, alert notification will be displayed.
 
