@@ -62,7 +62,36 @@ const Register = () => {
     };
 
     const minLength = (length, text, type) => {
-        if (text.length < length) {
+        if (text.length < length && text !== "") {
+            setError(state => ({
+                ...state,
+                [type]: true
+            }));
+        } else {
+            setError(state => ({
+                ...state,
+                [type]: false
+            }));
+        }
+    }
+
+    const validator = (regex, text, type) => {
+        const regexStr = new RegExp(regex, 'g');
+        if (!regexStr.test(text) && text !== "") {
+            setError(state => ({
+                ...state,
+                [type]: true
+            }));
+        } else {
+            setError(state => ({
+                ...state,
+                [type]: false
+            }));
+        }
+    }
+
+    const passwordsMatch = (passwordOne, passwordTwo, type) => {
+        if (passwordOne !== passwordTwo && passwordTwo !== "") {
             setError(state => ({
                 ...state,
                 [type]: true
@@ -116,8 +145,11 @@ const Register = () => {
                         required
                         value={data.lastName}
                         onChange={(ev) => changeHandler(ev)}
+                        onBlur={() => minLength(3, data.lastName, "lastName")}
                     />
-                    <p className={styles["form-error"]}>Last name should be at least 3 characters long!</p>
+                    {error.lastName &&
+                        <p className={styles["form-error"]}>Last name should be at least 3 characters long!</p>
+                    }
 
                     <label htmlFor="email">Email:</label>
                     <input
@@ -127,8 +159,12 @@ const Register = () => {
                         required
                         value={data.email}
                         onChange={(ev) => changeHandler(ev)}
+                        onBlur={() =>
+                            validator("^[A-Za-z0-9_\.]+@[A-Za-z]+\.[A-Za-z]{2,3}$", data.email, "email")}
                     />
-                    <p className={styles["form-error"]}>Email is not valid!</p>
+                    {error.email &&
+                        <p className={styles["form-error"]}>Email is not valid!</p>
+                    }
 
                     <fieldset id="password-field">
                         <legend>Password</legend>
@@ -167,8 +203,11 @@ const Register = () => {
                         required
                         value={data.rePass}
                         onChange={(ev) => changeHandler(ev)}
+                        onBlur={() => passwordsMatch(data.password, data.rePass, "rePass")}
                     />
-                    <p className={styles["form-error"]}>Passwords do not match!</p>
+                    {error.rePass &&
+                        <p className={styles["form-error"]}>Passwords do not match!</p>
+                    }
 
                     <p>
                         Aleready registered? <Link to="/login" replace>Sign In</Link>
