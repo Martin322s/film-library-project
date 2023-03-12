@@ -24,65 +24,84 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
+
                     <Route path="/catalog" element={<Catalog />} />
+
                     <Route path="/search/:criteria" element={<SearchResults />} />
+
                     <Route path="*" element={<NotFound />} />
 
-                    <PrivateRoute>
-                        <Route
-                            path="/login"
-                            element={<Login />}
-                        />
-                    </PrivateRoute>
+                    <Route
+                        path="/login"
+                        element={
+                            <PrivateRoute>
+                                <Login />
+                            </PrivateRoute>
+                        }
+                    />
 
-                    <PrivateRoute>
-                        <Route
-                            path="/register"
-                            element={<Register />}
-                        />
-                    </PrivateRoute>
+                    <Route
+                        path="/register"
+                        element={
+                            <PrivateRoute>
+                                <Register />
+                            </PrivateRoute>
+                        }
+                    />
 
-                    <RouteGuard>
-                        <Route
-                            path="/create"
-                            element={<Create />}
-                        />
-                    </RouteGuard>
+                    <Route
+                        path="/create"
+                        element={
+                            <RouteGuard>
+                                <Create />
+                            </RouteGuard>
+                        }
+                    />
 
-                    <RouteGuard>
-                        <Route
-                            path="/profile/:id"
-                            element={<Profile />}
-                        />
-                    </RouteGuard>
+                    <Route
+                        path="/profile/:id"
+                        element={
+                            <RouteGuard>
+                                <Profile />
+                            </RouteGuard>
+                        }
+                    />
 
-                    <RouteGuard>
-                        <Route
-                            path="/logout"
-                            element={<Logout />}
-                        />
-                    </RouteGuard>
+                    <Route
+                        path="/logout"
+                        element={
+                            <RouteGuard>
+                                <Logout />
+                            </RouteGuard>
+                        }
+                    />
 
-                    <RouteGuard>
-                        <Route
-                            path="/details/:publicationId"
-                            element={<Details />}
-                        />
-                    </RouteGuard>
+                    <Route
+                        path="/details/:publicationId"
+                        element={
+                            <RouteGuard>
+                                <Details />
+                            </RouteGuard>
+                        }
+                    />
 
-                    <RouteGuard>
-                        <Route
-                            path="/delete/:publicId"
-                            element={<Delete />}
-                        />
-                    </RouteGuard>
+                    <Route
+                        path="/delete/:publicId"
+                        element={
+                            <RouteGuard>
+                                <Delete />
+                            </RouteGuard>
+                        }
+                    />
 
-                    <RouteGuard>
-                        <Route
-                            path="/edit/:publicId"
-                            element={<Edit />}
-                        />
-                    </RouteGuard>
+                    <Route
+                        path="/edit/:publicId"
+                        element={
+                            <RouteGuard>
+                                <Edit />
+                            </RouteGuard>
+                        }
+                    />
                 </Routes>
                 <Footer />
             </AuthProvider>
