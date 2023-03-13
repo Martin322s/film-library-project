@@ -17,7 +17,9 @@ const Search = () => {
                 value={criteria}
                 onChange={(ev) => chnageHandler(ev)}
             />
-            <Link to={`/search/${criteria}`} className={styles["btn-search"]}><i className="fas fa-search"></i>Search</Link>
+            <Link to={`/search/${criteria}`} className={styles["btn-search"]}>
+                <i className="fas fa-search"></i>Search
+            </Link>
         </li>
     );
 }
