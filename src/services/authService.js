@@ -1,4 +1,4 @@
-const baseUrl = "https://film-library-api.herokuapp.com/users";
+const baseUrl = "https://cinema-city-api.herokuapp.com/users";
 
 export const registerUser = (userData) => {
     return fetch(`${baseUrl}/register`, {
