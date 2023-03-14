@@ -1,8 +1,8 @@
+import { useContext, useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import styles from "./styles/details.module.css";
 import * as service from "../../services/filmService";
 import { AuthContext } from "../../contexts/AuthContext";
-import { Link, useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
 
 const Details = () => {
     const { publicationId } = useParams();
