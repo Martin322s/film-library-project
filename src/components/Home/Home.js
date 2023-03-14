@@ -1,5 +1,4 @@
 import styles from "./styles/main-content.module.css";
-import "./styles/responsive/responsive-600.css";
 import * as service from "../../services/filmService";
 import main from "./images/main-two.jpeg";
 import FilmItem from "./FilmItem";
