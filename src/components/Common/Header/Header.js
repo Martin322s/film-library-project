@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./styles/navigation.module.css";
-import logo from "./images/logo.png";
+import logo from "./images/logo-2.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Search from "../../Search/Search";

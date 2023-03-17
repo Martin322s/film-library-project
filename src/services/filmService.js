@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3030/publications";
+const baseUrl = "https://cinema-city-api.herokuapp.com/publications";
 
 export const createFilm = (filmData, accessToken) => {
     return fetch(`${baseUrl}/create`, {
