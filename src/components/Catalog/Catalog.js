@@ -18,16 +18,14 @@ const Catalog = () => {
         cases[i] = i;
     }
 
-    console.log(films);
-
     useEffect(() => {
         service.getAll()
             .then(result => {
-                if (cases[queryParams]) {
-                    setFilms(result);
-                }
+                setFilms(result);
             });
     }, []);
+
+    console.log(queryParams);
 
     function displayItems() {
         const startIndex = (currentPage - 1) * 10;
