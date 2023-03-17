@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { useLocation } from 'react-router-dom';
-import { Link } from "react-router-dom"
 import * as service from "../../services/filmService";
 import CatalogItem from "./CatalogItem";
 import "./styles/catalog.css";
@@ -9,15 +7,6 @@ const Catalog = () => {
     const [films, setFilms] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
 
-    const location = useLocation();
-    const queryParams = Number(location.search.substring(6));
-    const totalPages = Math.ceil(films.length / 10);
-    const cases = {};
-
-    for (let i = 1; i <= totalPages; i++) {
-        cases[i] = i;
-    }
-
     useEffect(() => {
         service.getAll()
             .then(result => {
@@ -25,30 +14,10 @@ const Catalog = () => {
             });
     }, []);
 
-    console.log(queryParams);
-
-    function displayItems() {
-        const startIndex = (currentPage - 1) * 10;
-        const endIndex = startIndex + 10;
-        return films.slice(startIndex, endIndex).map(film => (
-            <li key={film._id}>{film.name}</li>
-        ));
-    }
-
-    // Define a function to display the pagination links
-    function displayPagination() {
-        const totalItems = films.length;
-        const totalPages = Math.ceil(totalItems / 10);
-        const links = [];
-        for (let i = 1; i <= totalPages; i++) {
-            links.push(
-                <Link key={i} to={`/catalog?page=${i}`} onClick={() => setCurrentPage(i)}>
-                    {i}
-                </Link>
-            );
-        }
-        return links;
-    }
+    const totalPages = Math.ceil(films.length / 10);
+    const indexOfLastItem = currentPage * 10;
+    const indexOfFirstItem = indexOfLastItem - 10;
+    const currentItems = films.slice(indexOfFirstItem, indexOfLastItem);
 
     //eslint-disable-next-line
     return (
@@ -80,12 +49,27 @@ const Catalog = () => {
                 </ul>
             </aside>
             <section className="catalog">
-
+                {currentPage > 1 && (
+                    <button 
+                        className="btn-pagination" 
+                        onClick={() => setCurrentPage(currentPage - 1)}
+                    >
+                        Previous Page
+                    </button>
+                )}
+                {currentPage < totalPages && (
+                    <button 
+                        className="btn-pagination" 
+                        onClick={() => setCurrentPage(currentPage + 1)}
+                    >
+                        Next Page
+                    </button>
+                )}
                 {/* eslint-disable-next-line */}
                 <ul className="movies-list" role={"list"}>
                     {films.length > 0
                         ?
-                        films.map(film =>
+                        currentItems.map(film =>
                             <li key={film._id}>
                                 <CatalogItem {...film} />
                             </li>
@@ -94,14 +78,6 @@ const Catalog = () => {
                         <h1 className="empty-catalog">There are no publications yet.</h1>
                     }
                 </ul>
-                <div className="pagination">
-                {/* eslint-disable-next-line */}
-                    <ul role={"list"}>
-                        {displayItems()}
-                    </ul>
-                    <div>{displayPagination()}</div>
-                </div>
-
             </section>
         </main>
     );
