@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import * as service from "../../services/filmService";
+import PaginationItem from "../Pagination/Pagination";
 import CatalogItem from "./CatalogItem";
 import "./styles/catalog.css";
 
@@ -57,6 +58,7 @@ const Catalog = () => {
                         <h1 className="empty-catalog">There are no publications yet.</h1>
                     }
                 </ul>
+                <PaginationItem />
             </section>
         </main>
     );

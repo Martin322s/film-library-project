@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import * as service from "../../services/authService";
 import styles from "./styles/login.module.css";
-import "./styles/responsive/responsive.css";
 import people from "./images/people.webp";
 
 const Login = () => {
