@@ -95,7 +95,10 @@ const Catalog = () => {
                     }
                 </ul>
                 <div className="pagination">
-                    <ul role={"list"}>{displayItems()}</ul>
+                {/* eslint-disable-next-line */}
+                    <ul role={"list"}>
+                        {displayItems()}
+                    </ul>
                     <div>{displayPagination()}</div>
                 </div>
 
