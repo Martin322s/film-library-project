@@ -14,9 +14,9 @@ const Catalog = () => {
             });
     }, []);
 
-    const totalPages = Math.ceil(films.length / 10);
-    const indexOfLastItem = currentPage * 10;
-    const indexOfFirstItem = indexOfLastItem - 10;
+    const totalPages = Math.ceil(films.length / 12);
+    const indexOfLastItem = currentPage * 12;
+    const indexOfFirstItem = indexOfLastItem - 12;
     const currentItems = films.slice(indexOfFirstItem, indexOfLastItem);
 
     //eslint-disable-next-line
