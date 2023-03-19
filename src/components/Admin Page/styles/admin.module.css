@@ -1,0 +1,80 @@
+.welcome-user {
+    text-align: center;
+    font-size: 40px;
+}
+
+.film-profile {
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.welcome-user-email {
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid black;
+}
+
+ul.created-publications li ul.shared-publications li {
+    width: 300px;
+}
+
+ul.created-publications {
+    margin-left: 220px;
+    padding-right: 180px;
+    border-right: 3px solid black;
+}
+
+ul.shared-publications {
+    margin-left: -100px;
+    margin-bottom: 40px;
+}
+
+h3.headings {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+ul > li p.film-details {
+    width: 360px;
+    margin-bottom: 20px;
+}
+
+.film-heading-user {
+    text-align: left;
+}
+
+h2.film-heading-user {
+    color: white;
+}
+
+ul.shared-publications li img,
+ul.created-publications li img {
+    height: 220px;
+    width: 220px;
+}
+
+.user-publications {
+    display: flex;
+    gap: 400px;
+}
+
+ul.created-publications li, 
+ul.shared-publications li {
+    margin-bottom: 30px;
+}
+
+ul.created-publications li , 
+ul.shared-publications li {
+    margin-bottom: 30px;
+}
+
+h3.headings-created,
+h3.headings-shared {
+    font-size: 30px;
+}

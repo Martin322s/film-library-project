@@ -1,4 +1,4 @@
-const baseUrl = "https://cinema-city-api.herokuapp.com/users";
+const baseUrl = "http://localhost:3030/users";
 
 export const registerUser = (userData) => {
     return fetch(`${baseUrl}/register`, {

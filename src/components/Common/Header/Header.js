@@ -44,6 +44,13 @@ const Header = () => {
                         </li>
                     </>
                 }
+                {user.accessToken && user.role === "admin"
+                    ?
+                    <li className={styles["nav-item"]}>
+                        <Link to="/admin-page">Admin Page</Link>
+                    </li>
+                    :null
+                }
                 <Search />
             </ul>
             <h1 className={styles["header_heading"]}>

@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import AdminPage from "./components/Admin Page/AdminPage";
 import Catalog from "./components/Catalog/Catalog";
 import Footer from "./components/Common/Footer/Footer";
 import Header from "./components/Common/Header/Header";
@@ -72,6 +73,15 @@ function App() {
                         element={
                             <RouteGuard>
                                 <Logout />
+                            </RouteGuard>
+                        }
+                    />
+
+                    <Route
+                        path="/admin-page"
+                        element={
+                            <RouteGuard>
+                                <AdminPage />
                             </RouteGuard>
                         }
                     />
