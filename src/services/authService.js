@@ -32,3 +32,25 @@ export const loginUser = (userData) => {
 };
 
 export const getUsers = () => fetch(`${baseUrl}/users`).then(res => res.json()); 
+
+export const deleteUser = (userId, token) => {
+    return fetch(`${baseUrl}/delete/${userId}`, {
+        method: 'DELETE',
+        headers: {
+            "X-Authorization": token
+        }
+    })
+        .then(res => res.json());
+};
+
+export const updateUser = (userId, token, data) => {
+    return fetch(`${baseUrl}/update/${userId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Authorization': token
+        },
+        body: JSON.stringify(data)
+    })
+        .then(res => res.json());
+};

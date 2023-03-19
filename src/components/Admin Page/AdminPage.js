@@ -5,9 +5,11 @@ import { AuthContext } from "../../contexts/AuthContext";
 import styles from "./styles/admin.module.css";
 import AdminPageItem from "./AdminPageItem";
 import AdminPublication from "./PublicationItem";
+import { useNavigate } from "react-router-dom";
 
 const AdminPage = () => {
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
     const [users, setUsers] = useState([]);
     const [publications, setPublications] = useState([]);
 
@@ -18,6 +20,24 @@ const AdminPage = () => {
         filmService.getAll()
             .then(publications => setPublications(publications));
     }, []);
+
+    const userDelete = (userId, token) => {
+        service.deleteUser(userId, token)
+            .then(() => {
+                service.getUsers()
+                    .then(users => setUsers(users));
+                navigate("/admin-page", { replace: true });
+            });
+    };
+
+    const updateUser = (userId, token, data) => {
+        service.updateUser(userId, token, data)
+            .then(() => {
+                service.getUsers()
+                    .then(users => setUsers(users));
+                navigate("/admin-page", { replace: true });
+            });
+    };
 
     return (
         <section>
@@ -30,10 +50,14 @@ const AdminPage = () => {
                     <h3 className={styles["headings"]}>Registered users:</h3>
                     {users.length > 0
                         ?
-                        users.map(x => 
+                        users.map(x =>
                             <li key={x._id}>
-                                <AdminPageItem {...x} />
-                            </li>    
+                                <AdminPageItem 
+                                    {...x} 
+                                    onDelete={() => userDelete(x._id, x.accessToken)} 
+                                    onUpdate={() => updateUser(x._id, x.accessToken, {...x, status: 'blocked'})}
+                                />
+                            </li>
                         )
                         : null
                     }
@@ -43,10 +67,10 @@ const AdminPage = () => {
                     <h3 className={styles["headings"]}>Created publications:</h3>
                     {publications.length > 0
                         ?
-                        publications.map(x => 
+                        publications.map(x =>
                             <li key={x._id}>
                                 <AdminPublication {...x} />
-                            </li>    
+                            </li>
                         )
                         : null
                     }
