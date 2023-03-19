@@ -1,9 +1,24 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import * as service from "../../services/authService";
+import * as filmService from "../../services/filmService";
 import { AuthContext } from "../../contexts/AuthContext";
 import styles from "./styles/admin.module.css";
+import AdminPageItem from "./AdminPageItem";
+import AdminPublication from "./PublicationItem";
 
 const AdminPage = () => {
     const { user } = useContext(AuthContext);
+    const [users, setUsers] = useState([]);
+    const [publications, setPublications] = useState([]);
+
+    useEffect(() => {
+        service.getUsers()
+            .then(users => setUsers(users));
+
+        filmService.getAll()
+            .then(publications => setPublications(publications));
+    }, []);
+
     return (
         <section>
             <h1 className={styles["welcome-user"]}>Full Name: {`${user.firstName} ${user.lastName}`}</h1>
@@ -13,10 +28,28 @@ const AdminPage = () => {
                 {/* eslint-disable-next-line */}
                 <ul className={styles["created-publications"]} role={"list"}>
                     <h3 className={styles["headings"]}>Registered users:</h3>
+                    {users.length > 0
+                        ?
+                        users.map(x => 
+                            <li key={x._id}>
+                                <AdminPageItem {...x} />
+                            </li>    
+                        )
+                        : null
+                    }
                 </ul>
                 {/* eslint-disable-next-line */}
                 <ul className={styles["shared-publications"]} role={"list"}>
                     <h3 className={styles["headings"]}>Created publications:</h3>
+                    {publications.length > 0
+                        ?
+                        publications.map(x => 
+                            <li key={x._id}>
+                                <AdminPublication {...x} />
+                            </li>    
+                        )
+                        : null
+                    }
                 </ul>
             </article>
         </section>

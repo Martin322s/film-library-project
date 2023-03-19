@@ -30,3 +30,5 @@ export const loginUser = (userData) => {
     })
         .then(res => res.json());
 };
+
+export const getUsers = () => fetch(`${baseUrl}/users`).then(res => res.json()); 

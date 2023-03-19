@@ -78,3 +78,43 @@ h3.headings-created,
 h3.headings-shared {
     font-size: 30px;
 }
+
+.user-card {
+    border: 2px solid black;
+    padding: 10px 20px;
+    width: 300px;
+    background-color: rgb(250, 194, 120);
+}
+
+.user-email {
+    margin-bottom: 10px;
+}
+
+.block-btn {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    cursor: pointer;
+}
+
+.film-card {
+    border: 3px solid black;
+    width: 220px;
+    background-color: rgb(250, 194, 120);
+}
+
+.film-card-img {
+    width: 100%;
+}
+
+.film-heading-title {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.link-details-btn {
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
