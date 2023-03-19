@@ -45,7 +45,7 @@ export const deleteUser = (userId, token) => {
 
 export const updateUser = (userId, token, data) => {
     return fetch(`${baseUrl}/update/${userId}`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
             'X-Authorization': token

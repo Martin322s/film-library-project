@@ -30,15 +30,6 @@ const AdminPage = () => {
             });
     };
 
-    const updateUser = (userId, token, data) => {
-        service.updateUser(userId, token, data)
-            .then(() => {
-                service.getUsers()
-                    .then(users => setUsers(users));
-                navigate("/admin-page", { replace: true });
-            });
-    };
-
     return (
         <section>
             <h1 className={styles["welcome-user"]}>Full Name: {`${user.firstName} ${user.lastName}`}</h1>
@@ -52,10 +43,9 @@ const AdminPage = () => {
                         ?
                         users.map(x =>
                             <li key={x._id}>
-                                <AdminPageItem 
-                                    {...x} 
-                                    onDelete={() => userDelete(x._id, x.accessToken)} 
-                                    onUpdate={() => updateUser(x._id, x.accessToken, {...x, status: 'blocked'})}
+                                <AdminPageItem
+                                    {...x}
+                                    onDelete={() => userDelete(x._id, x.accessToken)}
                                 />
                             </li>
                         )
